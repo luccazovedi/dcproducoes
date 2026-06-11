@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DC Produções & Eventos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #090909;
+    --s1:       #111111;
+    --s2:       #181818;
+    --gold:     #c8a45a;
+    --gold-lt:  #dfc07f;
+    --gold-dim: rgba(200,164,90,.12);
+    --line:     rgba(255,255,255,.07);
+    --line-h:   rgba(255,255,255,.14);
+    --text:     #f0efeb;
+    --muted:    #7a7975;
+    --dim:      #444441;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  img { display: block; max-width: 100%; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    inset: 0 0 auto;
+    z-index: 100;
+    height: 64px;
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(9,9,9,.88);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo img {
+    height: 36px;
+    width: auto;
+    filter: brightness(0) invert(1);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .18s;
+  }
+
+  .nav-links a:hover { color: var(--text); }
+
+  .nav-cta {
+    padding: 9px 22px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: #090909;
+    text-decoration: none;
+    transition: background .18s;
+  }
+
+  .nav-cta:hover { background: var(--gold-lt); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .hero-img {
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(to right, rgba(9,9,9,.92) 42%, rgba(9,9,9,.3) 100%),
+      linear-gradient(to top, rgba(9,9,9,.7) 0%, transparent 50%);
+  }
+
+  .hero-body {
+    position: relative;
+    z-index: 2;
+    padding: 0 48px 72px;
+    max-width: 680px;
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .hero-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(64px, 9vw, 128px);
+    line-height: .96;
+    letter-spacing: .02em;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  .hero-title span { color: var(--gold); }
+
+  .hero-sub {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 420px;
+    margin-bottom: 40px;
+  }
+
+  .btn-row { display: flex; gap: 12px; }
+
+  .btn-p {
+    padding: 14px 32px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    background: var(--gold);
+    color: #090909;
+    text-decoration: none;
+    transition: background .18s, transform .14s;
+  }
+
+  .btn-p:hover { background: var(--gold-lt); transform: translateY(-2px); }
+
+  .btn-o {
+    padding: 14px 32px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--line-h);
+    text-decoration: none;
+    transition: border-color .18s, color .18s;
+  }
+
+  .btn-o:hover { border-color: var(--gold); color: var(--gold); }
+
+  .hero-stats {
+    position: absolute;
+    right: 48px;
+    bottom: 72px;
+    z-index: 2;
+    display: flex;
+    gap: 40px;
+  }
+
+  .hstat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 52px;
+    line-height: 1;
+    color: var(--text);
+  }
+
+  .hstat-num sup { font-size: 28px; color: var(--gold); }
+
+  .hstat-lbl {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-top: 4px;
+  }
+
+  /* ── ABOUT + SERVICES ── */
+  .about-svc {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-top: 1px solid var(--line);
+  }
+
+  .about-col {
+    padding: 80px 48px;
+    border-right: 1px solid var(--line);
+  }
+
+  .svc-col {
+    padding: 80px 48px;
+    background: var(--s1);
+  }
+
+  .sec-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+
+  .sec-label::before {
+    content: '';
+    width: 20px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h2.display {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(40px, 4.5vw, 64px);
+    line-height: 1;
+    letter-spacing: .03em;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  h2.display span { color: var(--gold); }
+
+  .about-text {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 420px;
+  }
+
+  .about-img-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 36px;
+  }
+
+  .about-img-row img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    filter: brightness(.85);
+    transition: filter .3s;
+  }
+
+  .about-img-row img:hover { filter: brightness(1); }
+
+  .svc-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .svc-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--line);
+    transition: background .2s;
+  }
+
+  .svc-item:first-child { border-top: 1px solid var(--line); }
+
+  .svc-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: .08em;
+    min-width: 28px;
+    padding-top: 2px;
+  }
+
+  .svc-info-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .svc-info-desc {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── PORTFOLIO ── */
+  .portfolio {
+    padding: 80px 48px;
+    border-top: 1px solid var(--line);
+  }
+
+  .port-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 32px;
+  }
+
+  .port-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 240px 240px;
+    gap: 6px;
+  }
+
+  .port-grid .p1 { grid-column: span 7; }
+  .port-grid .p2 { grid-column: span 5; }
+  .port-grid .p3 { grid-column: span 4; }
+  .port-grid .p4 { grid-column: span 5; }
+  .port-grid .p5 { grid-column: span 3; }
+
+  .port-item {
+    overflow: hidden;
+    position: relative;
+    background: var(--s2);
+  }
+
+  .port-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .5s ease, filter .5s ease;
+    filter: brightness(.8) saturate(.85);
+  }
+
+  .port-item:hover img { transform: scale(1.04); filter: brightness(1) saturate(1); }
+
+  .port-tag {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: rgba(240,239,235,.6);
+    background: rgba(9,9,9,.6);
+    padding: 5px 10px;
+    backdrop-filter: blur(6px);
+    pointer-events: none;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--gold);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .stat-cell {
+    padding: 48px 40px;
+    border-right: 1px solid rgba(0,0,0,.12);
+  }
+
+  .stat-cell:last-child { border-right: none; }
+
+  .stat-n {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 60px;
+    line-height: 1;
+    color: #090909;
+    letter-spacing: .02em;
+  }
+
+  .stat-l {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: rgba(9,9,9,.5);
+    margin-top: 6px;
+  }
+
+  /* ── CTA + FOOTER ── */
+  .bottom {
+    border-top: 1px solid var(--line);
+  }
+
+  .cta-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 48px;
+    padding: 64px 48px;
+    border-bottom: 1px solid var(--line);
+    background: var(--s1);
+  }
+
+  .cta-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(32px, 3.5vw, 52px);
+    line-height: 1.05;
+    letter-spacing: .03em;
+    color: var(--text);
+  }
+
+  .cta-title span { color: var(--gold); }
+
+  .cta-sub {
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 8px;
+    line-height: 1.6;
+  }
+
+  .cta-btns { display: flex; flex-direction: column; gap: 8px; white-space: nowrap; }
+
+  .footer-row {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 64px;
+    padding: 48px 48px 32px;
+  }
+
+  .foot-brand {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 28px;
+    letter-spacing: .1em;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .foot-brand span { color: var(--gold); }
+
+  .foot-tagline {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+  }
+
+  .foot-socials { display: flex; gap: 8px; }
+
+  .soc {
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--line-h);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    transition: border-color .18s, color .18s;
+  }
+
+  .soc:hover { border-color: var(--gold); color: var(--gold); }
+
+  .foot-col-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 20px;
+  }
+
+  .foot-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+
+  .foot-links a {
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .18s;
+  }
+
+  .foot-links a:hover { color: var(--gold); }
+
+  .foot-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 48px;
+    border-top: 1px solid var(--line);
+  }
+
+  .foot-copy { font-size: 12px; color: var(--dim); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <img src="https://dcproducoes.com.br/wp-content/uploads/2026/01/logo-1.png" alt="DC Produções">
+  </a>
+  <ul class="nav-links">
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#portfolio">Portfólio</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+  <a href="https://wa.me/5511965723939" class="nav-cta">Orçamento →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <img
+    class="hero-img"
+    src="https://dcproducoes.com.br/wp-content/uploads/2026/01/Captura-de-tela-2025-09-24-211427-2.png"
+    alt="Evento DC Produções">
+  <div class="hero-overlay"></div>
+
+  <div class="hero-body">
+    <p class="eyebrow">São Paulo · Eventos & Audiovisual</p>
+    <h1 class="hero-title">
+      EVENTOS QUE<br>
+      <span>CONECTAM</span>,<br>
+      SOLUÇÕES QUE<br>
+      TRANSFORMAM.
+    </h1>
+    <p class="hero-sub">
+      Planejamento, produção audiovisual e execução de eventos
+      corporativos, shows e festivais desde 2019.
+    </p>
+    <div class="btn-row">
+      <a href="https://wa.me/5511965723939" class="btn-p">Solicitar Orçamento →</a>
+      <a href="#portfolio" class="btn-o">Ver Portfólio</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div>
+      <div class="hstat-num">680<sup>+</sup></div>
+      <div class="hstat-lbl">Eventos</div>
+    </div>
+    <div>
+      <div class="hstat-num">99<sup>%</sup></div>
+      <div class="hstat-lbl">Satisfação</div>
+    </div>
+    <div>
+      <div class="hstat-num">5<sup>+</sup></div>
+      <div class="hstat-lbl">Anos</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT + SERVICES -->
+<div class="about-svc" id="sobre">
+
+  <div class="about-col">
+    <p class="sec-label">Quem Somos</p>
+    <h2 class="display">REFERÊNCIA<br>EM <span>EVENTOS</span><br>& AUDIOVISUAL</h2>
+    <p class="about-text">
+      Fundada em 2019, a D.C Produções & Eventos nasceu para ser referência
+      em soluções completas. Trabalhamos com transparência e seriedade,
+      observando cada detalhe — do planejamento à execução.
+      Cada evento é único, e tratamos ele como tal.
+    </p>
+
+    <div class="about-img-row">
+      <img
+        src="https://dcproducoes.com.br/wp-content/uploads/2026/01/Captura-de-tela-2025-09-24-222042.png"
+        alt="Evento DC Produções">
+      <img
+        src="https://dcproducoes.com.br/wp-content/uploads/2026/01/Captura-de-tela-2025-09-24-220702.png"
+        alt="Produção audiovisual">
+    </div>
+  </div>
+
+  <div class="svc-col" id="servicos">
+    <p class="sec-label">O Que Fazemos</p>
+    <h2 class="display">NOSSOS<br><span>SERVIÇOS</span></h2>
+
+    <div class="svc-list">
+      <div class="svc-item">
+        <span class="svc-num">01</span>
+        <div>
+          <div class="svc-info-title">Produção & Audiovisual</div>
+          <div class="svc-info-desc">Equipamentos de última geração e equipe técnica para experiências imersivas.</div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <span class="svc-num">02</span>
+        <div>
+          <div class="svc-info-title">Stands, Cenografia & Estruturas</div>
+          <div class="svc-info-desc">Projetos personalizados com total segurança e responsabilidade técnica.</div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <span class="svc-num">03</span>
+        <div>
+          <div class="svc-info-title">Buffet & Catering</div>
+          <div class="svc-info-desc">Gastronomia completa levada até o seu evento com toda a infraestrutura.</div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <span class="svc-num">04</span>
+        <div>
+          <div class="svc-info-title">Organização de Eventos</div>
+          <div class="svc-info-desc">Planejamento e coordenação completa de eventos corporativos e shows.</div>
+        </div>
+      </div>
+      <div class="svc-item">
+        <span class="svc-num">05</span>
+        <div>
+          <div class="svc-info-title">Mão de Obra Técnica</div>
+          <div class="svc-info-desc">Profissionais qualificados em todas as áreas do mercado de eventos.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- PORTFOLIO -->
+<section class="portfolio" id="portfolio">
+  <div class="port-header">
+    <div>
+      <p class="sec-label">Alguns Trabalhos</p>
+      <h2 class="display">PROJETOS<br><span>EM DESTAQUE</span></h2>
+    </div>
+    <a href="https://www.instagram.com/dc.agenciadeeventos" class="btn-o">Ver mais no Instagram →</a>
+  </div>
+
+  <div class="port-grid">
+    <div class="port-item p1">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/01/Captura-de-tela-2025-12-10-115215.png" alt="Evento DC">
+      <span class="port-tag">Audiovisual</span>
+    </div>
+    <div class="port-item p2">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/01/Captura-de-tela-2025-12-10-115441.png" alt="Evento DC">
+      <span class="port-tag">Cenografia</span>
+    </div>
+    <div class="port-item p3">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/01/Captura-de-tela-2025-09-24-221953-1.png" alt="Evento DC">
+      <span class="port-tag">Produção</span>
+    </div>
+    <div class="port-item p4">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/01/THE01229-edited-scaled.jpg" alt="Buffet DC">
+      <span class="port-tag">Buffet & Catering</span>
+    </div>
+    <div class="port-item p5">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-23-at-12.25.45-edited.jpeg" alt="Evento DC">
+      <span class="port-tag">Corporativo</span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-cell">
+    <div class="stat-n">680+</div>
+    <div class="stat-l">Eventos realizados</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-n">99%</div>
+    <div class="stat-l">Clientes satisfeitos</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-n">5+</div>
+    <div class="stat-l">Anos de experiência</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-n">BR</div>
+    <div class="stat-l">Atendimento nacional</div>
+  </div>
+</div>
+
+<!-- CTA + FOOTER -->
+<div class="bottom" id="contato">
+
+  <div class="cta-row">
+    <div>
+      <h2 class="cta-title">PRONTO PARA UM<br>EVENTO <span>EXTRAORDINÁRIO?</span></h2>
+      <p class="cta-sub">Fale com nossa equipe e transforme sua ideia em realidade.<br>Atendimento em todo o Brasil.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="https://wa.me/5511965723939" class="btn-p">WhatsApp →</a>
+      <a href="https://dcproducoes.com.br/contato/" class="btn-o">Formulário de Contato</a>
+    </div>
+  </div>
+
+  <div class="footer-row">
+    <div>
+      <div class="foot-brand">DC <span>Produções</span></div>
+      <p class="foot-tagline">
+        Especialistas em eventos corporativos,<br>
+        shows e festas. Desde 2019, São Paulo.
+      </p>
+      <div class="foot-socials">
+        <a href="https://www.instagram.com/dc.agenciadeeventos" class="soc" aria-label="Instagram">IG</a>
+        <a href="https://www.linkedin.com/in/d-c-produ%C3%A7%C3%B5es-e-eventos-82583134a" class="soc" aria-label="LinkedIn">LI</a>
+        <a href="https://wa.me/5511965723939" class="soc" aria-label="WhatsApp">WA</a>
+      </div>
+    </div>
+
+    <div>
+      <p class="foot-col-label">Serviços</p>
+      <ul class="foot-links">
+        <li><a href="#servicos">Produção Audiovisual</a></li>
+        <li><a href="#servicos">Stands & Cenografia</a></li>
+        <li><a href="#servicos">Buffet & Catering</a></li>
+        <li><a href="#servicos">Organização de Eventos</a></li>
+        <li><a href="#servicos">Mão de Obra Técnica</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <p class="foot-col-label">Contato</p>
+      <ul class="foot-links">
+        <li><a href="https://wa.me/5511965723939">(11) 96572-3939</a></li>
+        <li><a href="https://dcproducoes.com.br/contato/">dcproducoes.com.br</a></li>
+        <li><a href="#">Zona Sul de São Paulo</a></li>
+        <li><a href="#">Metrô Butantã</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="foot-bottom">
+    <span class="foot-copy">© 2026 DC Produções & Eventos. Todos os direitos reservados.</span>
+    <span class="foot-copy">São Paulo — Brasil</span>
+  </div>
+
+</div>
+
+</body>
+</html>
