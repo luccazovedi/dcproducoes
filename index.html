@@ -393,6 +393,85 @@
     pointer-events: none;
   }
 
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    padding: 80px 48px;
+    border-top: 1px solid var(--line);
+    background: var(--s1);
+  }
+
+  .test-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 40px;
+  }
+
+  .test-card {
+    background: var(--s2);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    transition: border-color .2s;
+  }
+
+  .test-card:hover { border-color: var(--line-h); }
+
+  .test-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(.9);
+    transition: filter .3s;
+  }
+
+  .test-card:hover img { filter: brightness(1); }
+
+  /* ── CLIENTS ── */
+  .clients {
+    padding: 72px 48px;
+    border-top: 1px solid var(--line);
+  }
+
+  .clients-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .clients-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .client-cell {
+    background: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 28px 32px;
+    transition: background .25s;
+    overflow: hidden;
+  }
+
+  .client-cell:hover { background: var(--s2); }
+
+  .client-cell img {
+    max-width: 140px;
+    max-height: 56px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    opacity: .55;
+    mix-blend-mode: screen;
+    transition: opacity .3s;
+  }
+
+  .client-cell:hover img { opacity: 1; }
+
   /* ── STATS BAR ── */
   .stats-bar {
     background: var(--gold);
@@ -687,6 +766,66 @@
     <div class="port-item p5">
       <img src="https://dcproducoes.com.br/wp-content/uploads/2026/01/WhatsApp-Image-2026-01-23-at-12.25.45-edited.jpeg" alt="Evento DC">
       <span class="port-tag">Corporativo</span>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:0">
+    <div>
+      <p class="sec-label">Depoimentos</p>
+      <h2 class="display">O QUE NOSSOS<br><span>CLIENTES DIZEM</span></h2>
+    </div>
+    <p style="font-size:13px;color:var(--muted);max-width:320px;line-height:1.6;text-align:right">
+      Avaliações reais de clientes que confiaram na DC Produções para seus eventos.
+    </p>
+  </div>
+
+  <div class="test-grid">
+    <div class="test-card">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/02/Captura-de-tela-2026-02-04-104354.png" alt="Depoimento cliente DC Produções">
+    </div>
+    <div class="test-card">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/02/Captura-de-tela-2026-02-04-102739.png" alt="Depoimento cliente DC Produções">
+    </div>
+    <div class="test-card">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/02/Captura-de-tela-2026-02-04-095042.png" alt="Depoimento cliente DC Produções">
+    </div>
+    <div class="test-card">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/02/Captura-de-tela-2026-02-04-104403.png" alt="Depoimento cliente DC Produções">
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section class="clients">
+  <div class="clients-header">
+    <div>
+      <p class="sec-label">Clientes</p>
+      <h2 class="display">EMPRESAS QUE<br>CONFIAM EM<br><span>NOSSO TRABALHO</span></h2>
+    </div>
+    <p style="font-size:13px;color:var(--muted);max-width:280px;line-height:1.7">
+      A DC Produções tem o orgulho de contar com a confiança de diversas
+      empresas e marcas de renome no mercado de eventos.
+    </p>
+  </div>
+
+  <div class="clients-grid">
+    <div class="client-cell">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/01/Captura-de-tela-2025-09-25-035427-e1767748963449.png" alt="OAB">
+    </div>
+    <div class="client-cell">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/01/Captura-de-tela-2025-09-25-033638.png" alt="Monster Energy">
+    </div>
+    <div class="client-cell">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/01/Captura-de-tela-2025-09-25-035045-e1767748838492.png" alt="Xiaomi">
+    </div>
+    <div class="client-cell">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/01/Captura-de-tela-2025-09-25-035756-e1767749555718.png" alt="Bacio di Latte">
+    </div>
+    <div class="client-cell">
+      <img src="https://dcproducoes.com.br/wp-content/uploads/2026/01/Captura-de-tela-2025-09-25-034224-e1767748918520.png" alt="Maccaferri">
     </div>
   </div>
 </section>
