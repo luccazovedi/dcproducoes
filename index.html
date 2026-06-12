@@ -551,7 +551,12 @@
     color: var(--muted);
     line-height: 1.9;
     max-width: 420px;
-    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all .4s cubic-bezier(0.32, 0.08, 0.24, 1);
+    opacity: 0;
+  }
+
+  .about-text.visible {
+    opacity: 1;
   }
 
   .about-col:hover .about-text {
@@ -686,17 +691,33 @@
     position: relative;
     background: var(--s2);
     border-radius: 16px;
+    opacity: 0;
+    animation: fadeInScale .6s cubic-bezier(0.32, 0.08, 0.24, 1) forwards;
+  }
+
+  @keyframes fadeInScale {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
 
   .port-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform .5s ease, filter .5s ease;
+    transition: transform .6s cubic-bezier(0.32, 0.08, 0.24, 1), filter .6s cubic-bezier(0.32, 0.08, 0.24, 1);
     filter: brightness(.8) saturate(.85);
   }
 
-  .port-item:hover img { transform: scale(1.04); filter: brightness(1) saturate(1); }
+  .port-item:hover img {
+    transform: scale(1.06);
+    filter: brightness(1) saturate(1.1);
+  }
 
   .port-tag {
     position: absolute;
@@ -737,20 +758,39 @@
     border: 1px solid var(--line);
     border-radius: 20px;
     overflow: hidden;
-    transition: border-color .2s;
+    transition: all .4s cubic-bezier(0.32, 0.08, 0.24, 1);
+    opacity: 0;
+    animation: fadeInUp .6s cubic-bezier(0.32, 0.08, 0.24, 1) forwards;
   }
 
-  .test-card:hover { border-color: var(--line-h); }
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .test-card:hover {
+    border-color: var(--blue);
+    box-shadow: 0 12px 40px rgba(30,58,138,.15);
+    transform: translateY(-8px);
+  }
 
   .test-card img {
     width: 100%;
     height: auto;
     display: block;
     filter: brightness(.9);
-    transition: filter .3s;
+    transition: filter .4s cubic-bezier(0.32, 0.08, 0.24, 1);
   }
 
-  .test-card:hover img { filter: brightness(1); }
+  .test-card:hover img {
+    filter: brightness(1);
+  }
 
   /* ── CLIENTS ── */
   .clients {
@@ -786,11 +826,28 @@
     align-items: center;
     justify-content: center;
     padding: 28px 32px;
-    transition: background .25s;
+    transition: all .4s cubic-bezier(0.32, 0.08, 0.24, 1);
     overflow: hidden;
+    position: relative;
   }
 
-  .client-cell:hover { background: var(--s2); }
+  .client-cell::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(30,58,138,.05), rgba(30,58,138,.02));
+    opacity: 0;
+    transition: opacity .4s cubic-bezier(0.32, 0.08, 0.24, 1);
+  }
+
+  .client-cell:hover {
+    background: #ffffff;
+    box-shadow: 0 8px 24px rgba(30,58,138,.1);
+  }
+
+  .client-cell:hover::before {
+    opacity: 1;
+  }
 
   .client-cell img {
     max-width: 140px;
@@ -798,12 +855,17 @@
     width: auto;
     height: auto;
     object-fit: contain;
-    opacity: .55;
+    opacity: .6;
     mix-blend-mode: screen;
-    transition: opacity .3s;
+    transition: all .4s cubic-bezier(0.32, 0.08, 0.24, 1);
+    position: relative;
+    z-index: 1;
   }
 
-  .client-cell:hover img { opacity: 1; }
+  .client-cell:hover img {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 
   /* ── STATS BAR ── */
   .stats-bar {
@@ -931,20 +993,42 @@
   .foot-socials { display: flex; gap: 8px; }
 
   .soc {
-    width: 34px;
-    height: 34px;
-    border: 1px solid var(--line-h);
+    width: 38px;
+    height: 38px;
+    border: 2px solid var(--line-h);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 700;
     color: var(--muted);
     text-decoration: none;
-    transition: border-color .18s, color .18s;
+    transition: all .4s cubic-bezier(0.32, 0.08, 0.24, 1);
+    border-radius: 50%;
+    position: relative;
   }
 
-  .soc:hover { border-color: var(--gold); color: var(--gold); }
+  .soc::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, #fbbf24, #fcd34d);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity .4s cubic-bezier(0.32, 0.08, 0.24, 1);
+    z-index: -1;
+  }
+
+  .soc:hover {
+    border-color: #fbbf24;
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(251,191,36,.25);
+  }
+
+  .soc:hover::before {
+    opacity: 1;
+  }
 
   .foot-col-label {
     font-size: 10px;
@@ -1316,13 +1400,18 @@
     }
 
     .about-col, .svc-col {
-      padding: 52px 24px;
+      padding: 48px 20px;
       border-right: none;
       border-bottom: 1px solid var(--line);
     }
 
     .about-img-row {
-      margin-top: 24px;
+      margin-top: 28px;
+      gap: 10px;
+    }
+
+    .about-img-row img {
+      border-radius: 10px;
     }
 
     h2.display {
@@ -1349,7 +1438,18 @@
 
     /* PORTFOLIO */
     .portfolio {
-      padding: 48px 24px;
+      padding: 48px 20px;
+    }
+
+    .port-header {
+      flex-direction: column;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .port-grid {
+      grid-template-rows: 180px;
+      gap: 4px;
     }
 
     .port-header {
@@ -1380,29 +1480,42 @@
 
     /* TESTIMONIALS */
     .testimonials {
-      padding: 48px 24px;
+      padding: 48px 20px;
     }
 
     .test-grid {
       grid-template-columns: 1fr;
-      gap: 12px;
-      margin-top: 24px;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .test-card {
+      border-radius: 16px;
     }
 
     /* CLIENTS */
     .clients {
-      padding: 48px 24px;
+      padding: 48px 20px;
     }
 
     .clients-header {
       flex-direction: column;
-      gap: 20px;
-      margin-bottom: 24px;
+      gap: 24px;
+      margin-bottom: 28px;
     }
 
     .clients-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 1px;
+    }
+
+    .client-cell {
+      padding: 20px 16px;
+    }
+
+    .client-cell img {
+      max-width: 120px;
+      max-height: 48px;
     }
 
     .client-cell {
@@ -1445,11 +1558,15 @@
 
     /* CONTACT FORM */
     .contact-section {
-      padding: 48px 24px;
+      padding: 48px 20px;
     }
 
     .contact-container {
       max-width: 100%;
+    }
+
+    .contact-header {
+      margin-bottom: 36px;
     }
 
     .contact-title {
@@ -1462,31 +1579,56 @@
 
     .form-row {
       grid-template-columns: 1fr;
-      gap: 12px;
+      gap: 14px;
     }
 
     .form-group {
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      font-size: 12px;
+      margin-bottom: 6px;
     }
 
     .form-group input,
     .form-group textarea {
       padding: 12px 14px;
-      font-size: 14px;
+      font-size: 16px;
       border-radius: 10px;
+      transition: all .3s cubic-bezier(0.32, 0.08, 0.24, 1);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      transform: translateY(-2px);
     }
 
     .form-submit {
-      padding: 14px 24px;
-      font-size: 11px;
-      margin-top: 6px;
+      padding: 14px 28px;
+      font-size: 12px;
+      margin-top: 8px;
+      transition: all .4s cubic-bezier(0.32, 0.08, 0.24, 1);
     }
 
     /* CTA + FOOTER */
     .cta-row {
       grid-template-columns: 1fr;
-      gap: 24px;
-      padding: 48px 24px;
+      gap: 28px;
+      padding: 48px 20px;
+    }
+
+    .cta-title {
+      font-size: clamp(24px, 5vw, 36px);
+    }
+
+    .cta-btns {
+      width: 100%;
+    }
+
+    .cta-btns .btn-p,
+    .cta-btns .btn-o {
+      width: 100%;
     }
 
     .cta-title {
@@ -1509,7 +1651,8 @@
     .footer-row {
       grid-template-columns: 1fr;
       gap: 32px;
-      padding: 32px 24px;
+      padding: 40px 20px;
+      border-top: 1px solid var(--line);
     }
 
     .foot-brand {
@@ -1517,28 +1660,44 @@
     }
 
     .foot-tagline {
-      font-size: 12px;
+      font-size: 13px;
       margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    .foot-socials {
+      gap: 10px;
+    }
+
+    .soc {
+      width: 36px;
+      height: 36px;
+      font-size: 11px;
     }
 
     .foot-col-label {
-      font-size: 9px;
-      margin-bottom: 12px;
+      font-size: 10px;
+      margin-bottom: 14px;
+      font-weight: 700;
+    }
+
+    .foot-links {
+      gap: 12px;
     }
 
     .foot-links a {
-      font-size: 12px;
+      font-size: 13px;
     }
 
     .foot-bottom {
-      padding: 16px 24px;
+      padding: 20px 20px;
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
       text-align: center;
     }
 
     .foot-copy {
-      font-size: 11px;
+      font-size: 12px;
     }
   }
 
@@ -2058,6 +2217,51 @@
       animateCounter(stats[1], 99, 1500, 1200);
       animateCounter(stats[2], 5, 1000, 1400);
     }
+  });
+
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+
+        // Staggered animation for children
+        const children = entry.target.querySelectorAll('[data-animate]');
+        children.forEach((child, index) => {
+          setTimeout(() => {
+            child.classList.add('visible');
+          }, index * 100);
+        });
+      }
+    });
+  }, observerOptions);
+
+  // Observe elements
+  document.querySelectorAll('.about-text, .svc-item, .port-item, .test-card, h2.display').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Add data-animate to service items
+  document.querySelectorAll('.svc-item').forEach((item, index) => {
+    item.setAttribute('data-animate', index);
+    item.style.opacity = '0';
+    item.style.animation = `slideUp .6s cubic-bezier(0.32, 0.08, 0.24, 1) forwards`;
+    item.style.animationDelay = `${index * 100}ms`;
+  });
+
+  // Add data-animate to port items
+  document.querySelectorAll('.port-item').forEach((item, index) => {
+    item.style.animationDelay = `${index * 150}ms`;
+  });
+
+  // Add data-animate to test cards
+  document.querySelectorAll('.test-card').forEach((item, index) => {
+    item.style.animationDelay = `${index * 100}ms`;
   });
 
   // Form
