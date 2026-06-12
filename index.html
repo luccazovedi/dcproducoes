@@ -11,17 +11,22 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --bg:       #090909;
-    --s1:       #111111;
-    --s2:       #181818;
-    --gold:     #c8a45a;
-    --gold-lt:  #dfc07f;
-    --gold-dim: rgba(200,164,90,.12);
-    --line:     rgba(255,255,255,.07);
-    --line-h:   rgba(255,255,255,.14);
-    --text:     #f0efeb;
-    --muted:    #7a7975;
-    --dim:      #444441;
+    --bg:       #f8f9fb;
+    --s1:       #ffffff;
+    --s2:       #f1f5f9;
+    --primary:  #0f172a;
+    --blue:     #1e40af;
+    --blue-lt:  #3b82f6;
+    --gray:     #64748b;
+    --gray-lt:  #cbd5e1;
+    --gold:     #d4af37;
+    --gold-lt:  #e6c547;
+    --gold-dim: rgba(212,175,55,.08);
+    --line:     rgba(30,64,175,.08);
+    --line-h:   rgba(30,64,175,.15);
+    --text:     #0f172a;
+    --muted:    #64748b;
+    --dim:      #94a3b8;
   }
 
   html { scroll-behavior: smooth; }
@@ -48,7 +53,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(9,9,9,.88);
+    background: rgba(248,249,251,.92);
     backdrop-filter: blur(18px);
     border-bottom: 1px solid var(--line);
   }
@@ -91,8 +96,9 @@
     letter-spacing: .12em;
     text-transform: uppercase;
     background: var(--gold);
-    color: #090909;
+    color: #0f172a;
     text-decoration: none;
+    border-radius: 24px;
     transition: background .18s;
   }
 
@@ -119,8 +125,8 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(to right, rgba(9,9,9,.92) 42%, rgba(9,9,9,.3) 100%),
-      linear-gradient(to top, rgba(9,9,9,.7) 0%, transparent 50%);
+      linear-gradient(to right, rgba(15,23,42,.85) 42%, rgba(15,23,42,.2) 100%),
+      linear-gradient(to top, rgba(15,23,42,.5) 0%, transparent 50%);
   }
 
   .hero-body {
@@ -177,8 +183,9 @@
     letter-spacing: .12em;
     text-transform: uppercase;
     background: var(--gold);
-    color: #090909;
+    color: #0f172a;
     text-decoration: none;
+    border-radius: 28px;
     transition: background .18s, transform .14s;
   }
 
@@ -193,6 +200,7 @@
     background: transparent;
     color: var(--muted);
     border: 1px solid var(--line-h);
+    border-radius: 28px;
     text-decoration: none;
     transition: border-color .18s, color .18s;
   }
@@ -366,6 +374,7 @@
     overflow: hidden;
     position: relative;
     background: var(--s2);
+    border-radius: 16px;
   }
 
   .port-item img {
@@ -410,6 +419,7 @@
   .test-card {
     background: var(--s2);
     border: 1px solid var(--line);
+    border-radius: 20px;
     overflow: hidden;
     transition: border-color .2s;
   }
@@ -608,6 +618,129 @@
   }
 
   .foot-copy { font-size: 12px; color: var(--dim); }
+
+  /* ── CONTACT FORM ── */
+  .contact-section {
+    padding: 80px 48px;
+    border-top: 1px solid var(--line);
+    background: linear-gradient(135deg, rgba(30,64,175,.03) 0%, rgba(100,116,139,.02) 100%);
+  }
+
+  .contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .contact-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .contact-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(36px, 4vw, 52px);
+    line-height: 1.05;
+    letter-spacing: .03em;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+
+  .contact-title span { color: var(--blue); }
+
+  .contact-subtitle {
+    font-size: 15px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .form-group {
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--primary);
+    margin-bottom: 8px;
+    letter-spacing: .05em;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 14px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    border: 1px solid var(--gray-lt);
+    border-radius: 12px;
+    background: white;
+    color: var(--primary);
+    transition: border-color .2s, box-shadow .2s;
+  }
+
+  .form-group input::placeholder,
+  .form-group textarea::placeholder {
+    color: var(--dim);
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--blue-lt);
+    box-shadow: 0 0 0 3px rgba(62,165,255,.1);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-submit {
+    padding: 16px 40px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    background: var(--blue);
+    color: white;
+    border: none;
+    border-radius: 28px;
+    width: 100%;
+    cursor: pointer;
+    transition: background .2s, transform .14s;
+    margin-top: 8px;
+  }
+
+  .form-submit:hover {
+    background: var(--blue-lt);
+    transform: translateY(-2px);
+  }
+
+  .form-submit:active {
+    transform: translateY(0);
+  }
+
+  .form-feedback {
+    text-align: center;
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .form-feedback.success {
+    color: #10b981;
+  }
+
+  .form-feedback.error {
+    color: #ef4444;
+  }
 </style>
 </head>
 <body>
@@ -621,7 +754,7 @@
     <li><a href="#sobre">Sobre</a></li>
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="#portfolio">Portfólio</a></li>
-    <li><a href="#contato">Contato</a></li>
+    <li><a href="#form-contato">Orçamento</a></li>
   </ul>
   <a href="https://wa.me/5511965723939" class="nav-cta">Orçamento →</a>
 </nav>
@@ -850,6 +983,53 @@
   </div>
 </div>
 
+<!-- CONTACT FORM -->
+<section class="contact-section" id="form-contato">
+  <div class="contact-container">
+    <div class="contact-header">
+      <h2 class="contact-title">ENVIE SEU<br><span>ORÇAMENTO</span></h2>
+      <p class="contact-subtitle">Preencha os dados abaixo e nós entraremos em contato via WhatsApp para detalhar sua solicitação</p>
+    </div>
+
+    <form id="contactForm" class="contact-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Nome Completo</label>
+          <input type="text" id="name" name="name" required placeholder="Seu nome">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="seu@email.com">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="phone">WhatsApp</label>
+          <input type="tel" id="phone" name="phone" required placeholder="(11) 99999-9999">
+        </div>
+        <div class="form-group">
+          <label for="company">Empresa/Evento</label>
+          <input type="text" id="company" name="company" placeholder="Nome da empresa ou evento">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="service">Tipo de Serviço</label>
+        <input type="text" id="service" name="service" placeholder="Ex: Produção audiovisual, Catering, Decoração..." required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Detalhes do Evento</label>
+        <textarea id="message" name="message" required placeholder="Conte-nos mais sobre seu evento: data, local, quantidade de pessoas, orçamento aproximado..."></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Enviar para WhatsApp</button>
+      <div id="formFeedback" class="form-feedback"></div>
+    </form>
+  </div>
+</section>
+
 <!-- CTA + FOOTER -->
 <div class="bottom" id="contato">
 
@@ -907,5 +1087,69 @@
 
 </div>
 
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const company = document.getElementById('company').value;
+    const service = document.getElementById('service').value;
+    const message = document.getElementById('message').value;
+    const feedback = document.getElementById('formFeedback');
+
+    // Validação básica
+    if (!name || !email || !phone || !service || !message) {
+      feedback.textContent = 'Por favor, preencha todos os campos obrigatórios.';
+      feedback.classList.remove('success');
+      feedback.classList.add('error');
+      return;
+    }
+
+    // Formata a mensagem para WhatsApp
+    const whatsappMessage = `*Orçamento - DC Produções*\n\n` +
+      `*Nome:* ${name}\n` +
+      `*Email:* ${email}\n` +
+      `*WhatsApp:* ${phone}\n` +
+      `*Empresa/Evento:* ${company || 'Não informado'}\n` +
+      `*Tipo de Serviço:* ${service}\n\n` +
+      `*Detalhes:*\n${message}`;
+
+    // Codifica a mensagem para URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+    const whatsappURL = `https://wa.me/5511965723939?text=${encodedMessage}`;
+
+    // Abre WhatsApp
+    window.open(whatsappURL, '_blank');
+
+    // Feedback ao usuário
+    feedback.textContent = '✓ Abrindo WhatsApp... você será direcionado para enviar sua solicitação.';
+    feedback.classList.remove('error');
+    feedback.classList.add('success');
+
+    // Limpa o formulário após 2 segundos
+    setTimeout(() => {
+      document.getElementById('contactForm').reset();
+      feedback.textContent = '';
+      feedback.classList.remove('success');
+    }, 2000);
+  });
+
+  // Formata telefone enquanto digita
+  document.getElementById('phone').addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    if (value.length <= 11) {
+      if (value.length <= 2) {
+        value = value;
+      } else if (value.length <= 7) {
+        value = `(${value.slice(0, 2)}) ${value.slice(2)}`;
+      } else {
+        value = `(${value.slice(0, 2)}) ${value.slice(2, 7)}-${value.slice(7)}`;
+      }
+    }
+    e.target.value = value;
+  });
+</script>
 </body>
 </html>
