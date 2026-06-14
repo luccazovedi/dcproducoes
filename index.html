@@ -1320,14 +1320,14 @@
 
     /* HERO */
     .hero {
-      min-height: 80vh;
+      min-height: 100vh;
       align-items: center;
       justify-content: center;
-      padding-top: 100px;
+      padding-top: 80px;
     }
 
     .hero-body {
-      padding: 0 16px 80px;
+      padding: 0 18px 60px;
       max-width: 100%;
       text-align: center;
       animation: slideUp .9s cubic-bezier(0.32, 0.08, 0.24, 1) forwards;
@@ -1335,23 +1335,35 @@
       animation-delay: .2s;
     }
 
+    .eyebrow {
+      margin-bottom: 24px;
+      font-size: 11px;
+      gap: 10px;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      width: 28px;
+    }
+
     .hero-title {
-      font-size: clamp(28px, 7vw, 48px);
-      line-height: 1.15;
+      font-size: clamp(32px, 8vw, 56px);
+      line-height: 1.1;
       margin-bottom: 20px;
+      letter-spacing: -.01em;
       animation: slideUp .9s cubic-bezier(0.32, 0.08, 0.24, 1) forwards;
       opacity: 0;
       animation-delay: .4s;
     }
 
     .hero-sub {
-      font-size: 14px;
+      font-size: 15px;
       line-height: 1.7;
       margin-bottom: 32px;
+      max-width: 100%;
       animation: slideUp .9s cubic-bezier(0.32, 0.08, 0.24, 1) forwards;
       opacity: 0;
       animation-delay: .5s;
-      max-width: 100%;
     }
 
     .btn-row {
@@ -1360,38 +1372,46 @@
       animation: slideUp .9s cubic-bezier(0.32, 0.08, 0.24, 1) forwards;
       opacity: 0;
       animation-delay: .6s;
+      max-width: 280px;
+      margin: 0 auto;
     }
 
     .btn-p, .btn-o {
       width: 100%;
-      padding: 13px 28px;
+      padding: 14px 28px;
       font-size: 12px;
       text-align: center;
-      border-radius: 40px;
+      border-radius: 45px;
     }
 
     .hero-stats {
-      position: static;
-      flex-direction: row;
-      gap: 20px;
-      margin-top: 50px;
-      padding: 0 16px;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 40px;
+      z-index: 2;
+      display: flex;
+      gap: 32px;
+      justify-content: center;
       animation: slideUp .9s cubic-bezier(0.32, 0.08, 0.24, 1) forwards;
       opacity: 0;
       animation-delay: .8s;
-      justify-content: center;
+      width: 100%;
+      padding: 0 16px;
     }
 
     .hstat-num {
-      font-size: 40px;
+      font-size: 48px;
+      text-shadow: 0 4px 16px rgba(251,191,36,.2);
     }
 
     .hstat-num sup {
-      font-size: 24px;
+      font-size: 28px;
     }
 
     .hstat-lbl {
       font-size: 10px;
+      margin-top: 6px;
     }
 
     /* ABOUT + SERVICES */
@@ -1708,26 +1728,68 @@
     }
 
     .hero {
-      padding-top: 100px;
+      padding-top: 70px;
+      min-height: 90vh;
     }
 
     .hero-body {
-      padding: 0 16px 32px;
+      padding: 0 16px 80px;
+      margin: 0 auto;
     }
 
     .hero-title {
-      font-size: clamp(24px, 6vw, 40px);
-      margin-bottom: 16px;
+      font-size: clamp(28px, 7vw, 48px);
+      line-height: 1.1;
+      margin-bottom: 18px;
+      letter-spacing: -.01em;
     }
 
     .eyebrow {
-      font-size: 10px;
-      margin-bottom: 12px;
+      font-size: 11px;
+      margin-bottom: 22px;
+      gap: 10px;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      width: 26px;
     }
 
     .sec-label {
       font-size: 9px;
       margin-bottom: 12px;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+      max-width: 100%;
+    }
+
+    .btn-row {
+      max-width: 100%;
+      gap: 10px;
+    }
+
+    .btn-p, .btn-o {
+      padding: 13px 24px;
+      font-size: 11px;
+      border-radius: 40px;
+    }
+
+    .hero-stats {
+      gap: 24px;
+      bottom: 30px;
+      padding: 0 12px;
+    }
+
+    .hstat-num {
+      font-size: 40px;
+    }
+
+    .hstat-num sup {
+      font-size: 24px;
     }
 
     .about-col, .svc-col {
