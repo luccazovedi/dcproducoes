@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://dcproducoes.com.br/</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://dcproducoes.com.br/"/>
+    <image:image>
+      <image:loc>https://dcproducoes.com.br/img/hero.webp</image:loc>
+      <image:title>Evento corporativo produzido pela DC Produções em São Paulo</image:title>
+      <image:caption>DC Produções &amp; Eventos — produção profissional de eventos em São Paulo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://dcproducoes.com.br/img/4.webp</image:loc>
+      <image:title>Produção audiovisual profissional — DC Produções São Paulo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://dcproducoes.com.br/img/9.webp</image:loc>
+      <image:title>Cenografia e stand personalizado — DC Produções São Paulo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://dcproducoes.com.br/img/10.webp</image:loc>
+      <image:title>Palco e iluminação profissional para eventos — DC Produções</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://dcproducoes.com.br/img/11.webp</image:loc>
+      <image:title>Buffet e catering para eventos corporativos — DC Produções</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://dcproducoes.com.br/img/12.webp</image:loc>
+      <image:title>Evento corporativo em São Paulo — DC Produções</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://dcproducoes.com.br/privacidade.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://dcproducoes.com.br/cookies.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+  <url>
+    <loc>https://dcproducoes.com.br/termos.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

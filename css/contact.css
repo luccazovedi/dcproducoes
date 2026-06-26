@@ -1,0 +1,140 @@
+/* ── CONTACT FORM ── */
+.contact-section {
+  padding: 80px 48px;
+  border-top: 1px solid var(--line);
+  background: linear-gradient(135deg, rgba(251,191,36,.04) 0%, rgba(100,116,139,.02) 100%);
+}
+
+.contact-container { max-width: 600px; margin: 0 auto; }
+
+.contact-header { text-align: center; margin-bottom: 48px; }
+
+.contact-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 4vw, 52px);
+  line-height: 1.05;
+  letter-spacing: .03em;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.contact-title span { color: var(--blue); }
+
+.contact-subtitle { font-size: 15px; color: var(--muted); line-height: 1.6; }
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 8px;
+  letter-spacing: .05em;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 14px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  border: 1px solid var(--gray-lt);
+  border-radius: 12px;
+  background: white;
+  color: var(--primary);
+  transition: border-color .2s, box-shadow .2s;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 18px center;
+  padding-right: 44px;
+  cursor: pointer;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--dim); }
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(251,191,36,.12); }
+
+.form-group textarea { resize: vertical; min-height: 120px; }
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+.form-submit {
+  padding: 16px 40px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, #fbbf24 0%, #fcd34d 100%);
+  color: #1f2937;
+  border: 1px solid rgba(255,255,255,.3);
+  border-radius: 28px;
+  width: 100%;
+  cursor: pointer;
+  transition: all .4s cubic-bezier(0.32, 0.08, 0.24, 1);
+  box-shadow: 0 10px 30px rgba(251,191,36,.3), inset 0 1px 0 rgba(255,255,255,.4);
+  margin-top: 8px;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-submit::before {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.3), transparent);
+  transition: left .5s cubic-bezier(0.32, 0.08, 0.24, 1);
+}
+
+.form-submit:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(251,191,36,.4), inset 0 1px 0 rgba(255,255,255,.5); }
+.form-submit:hover::before { left: 100%; }
+.form-submit:active { transform: translateY(-1px); }
+
+.form-required { color: var(--gold); font-weight: 700; }
+
+.form-conditional {
+  overflow: hidden;
+  transition: opacity .3s cubic-bezier(0.32, 0.08, 0.24, 1), transform .3s cubic-bezier(0.32, 0.08, 0.24, 1);
+}
+
+.form-conditional.visible { animation: formSlideIn .3s cubic-bezier(0.32, 0.08, 0.24, 1) forwards; }
+
+@keyframes formSlideIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.form-input-row { display: flex; align-items: center; gap: 16px; }
+.form-input-row input[type="text"] { flex: 1; transition: opacity .25s ease; }
+
+.form-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  font-size: 13px;
+  color: var(--muted);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.form-checkbox-label input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--gold); cursor: pointer; flex-shrink: 0; }
+.form-checkbox-label span { font-size: 13px; font-weight: 500; color: var(--primary); }
+
+.form-feedback { text-align: center; margin-top: 16px; font-size: 13px; color: var(--muted); }
+.form-feedback.success { color: #10b981; }
+.form-feedback.error { color: #ef4444; }
