@@ -8,6 +8,7 @@
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isMobile = () => window.innerWidth < 768;
 
+
   /* ── SCROLL PROGRESS BAR ── */
   const progressBar = document.createElement('div');
   progressBar.className = 'scroll-progress';
@@ -252,14 +253,40 @@
     a.addEventListener('mouseleave', () => document.body.classList.remove('cursor-grow'));
   });
 
-  /* ── SMOOTH SECTION SCROLLING ── */
+  /* ── SMOOTH SECTION SCROLLING (via Lenis se disponível) ── */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {
       const target = document.querySelector(link.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (window.__lenis) {
+        window.__lenis.scrollTo(target, { offset: -(parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 70) });
+      } else {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     });
+  });
+
+  /* ── PORTFOLIO STICKY GALLERY — entrada dos itens ── */
+  const portItemObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const siblings = Array.from(el.closest('.psg-col, .psg-sticky')?.children || [el]);
+      const idx = siblings.indexOf(el);
+      setTimeout(() => {
+        el.style.opacity = '1';
+        el.style.transform = 'scale(1)';
+      }, idx * 80);
+      portItemObserver.unobserve(el);
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.psg-wrap .port-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'scale(0.96)';
+    el.style.transition = 'opacity .5s cubic-bezier(0.22,1,0.36,1), transform .5s cubic-bezier(0.22,1,0.36,1)';
+    portItemObserver.observe(el);
   });
 
   /* ── FORM INTERACTION MICRO-ANIMATIONS ── */
@@ -286,5 +313,35 @@
   }, { threshold: 0.15 });
 
   document.querySelectorAll('.about-text').forEach(el => aboutTextObserver.observe(el));
+
+  /* ── SWIPER COVERFLOW — galeria mobile ── */
+  (function () {
+    if (typeof Swiper === 'undefined') return;
+    if (!isMobile()) return;
+
+    new Swiper('.port-swiper', {
+      effect: 'coverflow',
+      grabCursor: true,
+      centeredSlides: true,
+      loop: true,
+      slidesPerView: 'auto',
+      spaceBetween: 24,
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 100,
+        modifier: 2.5,
+        slideShadows: false,
+      },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.port-swiper-pagination',
+        clickable: true,
+      },
+    });
+  })();
 
 })();

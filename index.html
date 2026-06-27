@@ -7,8 +7,10 @@
 
   <!-- SEO: Title & Description -->
   <title>DC Produções & Eventos | Empresa de Eventos em São Paulo</title>
-  <meta name="description" content="DC Produções: empresa especializada em eventos corporativos, shows, festivais e produção audiovisual em São Paulo. +680 eventos realizados desde 2019. Solicite seu orçamento!">
-  <meta name="keywords" content="empresa de eventos São Paulo, produção de eventos corporativos SP, audiovisual eventos, stands cenografia, buffet eventos, organização de eventos SP, DC Produções">
+  <meta name="description"
+    content="DC Produções: empresa especializada em eventos corporativos, shows, festivais e produção audiovisual em São Paulo. +680 eventos realizados desde 2019. Solicite seu orçamento!">
+  <meta name="keywords"
+    content="empresa de eventos São Paulo, produção de eventos corporativos SP, audiovisual eventos, stands cenografia, buffet eventos, organização de eventos SP, DC Produções">
   <meta name="author" content="DC Produções & Eventos">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://dcproducoes.com.br/">
@@ -21,7 +23,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dcproducoes.com.br/">
   <meta property="og:title" content="DC Produções & Eventos | Empresa de Eventos em São Paulo">
-  <meta property="og:description" content="Especialistas em eventos corporativos, shows e festivais em São Paulo. +680 eventos realizados desde 2019. Produção audiovisual, stands, buffet e muito mais.">
+  <meta property="og:description"
+    content="Especialistas em eventos corporativos, shows e festivais em São Paulo. +680 eventos realizados desde 2019. Produção audiovisual, stands, buffet e muito mais.">
   <meta property="og:image" content="https://dcproducoes.com.br/img/hero-og.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="1200">
@@ -34,7 +37,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@dcproducoes">
   <meta name="twitter:title" content="DC Produções & Eventos | Empresa de Eventos em São Paulo">
-  <meta name="twitter:description" content="Especialistas em eventos corporativos, shows e festivais em São Paulo. +680 eventos realizados desde 2019.">
+  <meta name="twitter:description"
+    content="Especialistas em eventos corporativos, shows e festivais em São Paulo. +680 eventos realizados desde 2019.">
   <meta name="twitter:image" content="https://dcproducoes.com.br/img/hero-og.jpg">
   <meta name="twitter:image:alt" content="Evento corporativo produzido pela DC Produções em São Paulo">
 
@@ -58,25 +62,103 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://images.unsplash.com">
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap"
+    rel="stylesheet">
 
   <!-- Critical CSS inline (above-the-fold: nav + hero) -->
   <style>
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:#f5f7fc;--primary:#0a0e27;--gold:#fbbf24;--nav-h:70px}
-    html{scroll-behavior:smooth}
-    body{background:var(--bg);color:#111827;font-family:'DM Sans',system-ui,sans-serif;font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    img{display:block;max-width:100%}
-    .site-header{position:sticky;top:0;z-index:100;width:100%;border-bottom:1px solid transparent}
-    .site-header nav{display:flex;align-items:center;justify-content:space-between;padding:0 clamp(16px,4vw,56px);height:var(--nav-h)}
-    .logo img{display:block}
-    .hero{position:relative;height:calc(100dvh - var(--nav-h));min-height:560px;display:flex;flex-direction:column}
-    .hero-img{position:absolute;inset:0;object-fit:cover;width:100%;height:100%}
-    .hero-overlay{position:absolute;inset:0;background:linear-gradient(105deg,rgba(10,14,39,.93) 0%,rgba(10,14,39,.62) 52%,rgba(10,14,39,.18) 100%),linear-gradient(to top,rgba(10,14,39,.96) 0%,rgba(10,14,39,.45) 28%,transparent 55%)}
-    .hero-content{flex:1;display:flex;flex-direction:column;justify-content:space-between;position:relative;z-index:2;padding:clamp(20px,7vw,80px)}
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --bg: #f5f7fc;
+      --primary: #0a0e27;
+      --gold: #fbbf24;
+      --nav-h: 70px
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      background: var(--bg);
+      color: #111827;
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      border-bottom: 1px solid transparent
+    }
+
+    .site-header nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(16px, 4vw, 56px);
+      height: var(--nav-h)
+    }
+
+    .logo img {
+      display: block
+    }
+
+    .hero {
+      position: relative;
+      height: calc(100dvh - var(--nav-h));
+      min-height: 560px;
+      display: flex;
+      flex-direction: column
+    }
+
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      object-fit: cover;
+      width: 100%;
+      height: 100%
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(105deg, rgba(10, 14, 39, .93) 0%, rgba(10, 14, 39, .62) 52%, rgba(10, 14, 39, .18) 100%), linear-gradient(to top, rgba(10, 14, 39, .96) 0%, rgba(10, 14, 39, .45) 28%, transparent 55%)
+    }
+
+    .hero-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      z-index: 2;
+      padding: clamp(20px, 7vw, 80px)
+    }
   </style>
 
   <!-- Styles (non-blocking for below-fold) -->
+  <!-- Swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/nav.css">
   <link rel="stylesheet" href="css/hero.css">
@@ -210,17 +292,22 @@
   <!-- SVG sprite: ícones reutilizados inline -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
     <symbol id="icon-wa" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
-      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L.057 23.428a.75.75 0 0 0 .922.922l5.638-1.476A11.951 11.951 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 0 1-4.953-1.355l-.355-.211-3.678.963.98-3.595-.23-.368A9.725 9.725 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+      <path
+        d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.531 5.845L.057 23.428a.75.75 0 0 0 .922.922l5.638-1.476A11.951 11.951 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.726 9.726 0 0 1-4.953-1.355l-.355-.211-3.678.963.98-3.595-.23-.368A9.725 9.725 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z" />
     </symbol>
     <symbol id="icon-instagram" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+      <path
+        d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
     </symbol>
     <symbol id="icon-linkedin" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+      <path
+        d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
     </symbol>
     <symbol id="icon-star" viewBox="0 0 24 24">
-      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+      <polygon
+        points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
     </symbol>
   </svg>
 
@@ -231,10 +318,7 @@
   <header class="site-header" id="siteHeader">
     <nav>
       <a href="/" class="logo" aria-label="DC Produções & Eventos — Página Inicial">
-        <picture>
-          <source srcset="img/logo.webp" type="image/webp">
-          <img src="img/logo.png" alt="DC Produções & Eventos" width="140" height="40">
-        </picture>
+        <img src="img/logo.webp" alt="DC Produções & Eventos" width="140" height="40">
       </a>
 
       <ul class="nav-links">
@@ -245,7 +329,9 @@
       </ul>
 
       <a href="https://wa.me/5511965723939" class="nav-cta">
-        <svg class="wa-icon"><use href="#icon-wa"/></svg>
+        <svg class="wa-icon">
+          <use href="#icon-wa" />
+        </svg>
         Orçamento →
       </a>
 
@@ -265,9 +351,31 @@
       <li><a href="#form-contato" class="nav-mobile-link">Orçamento</a></li>
     </ul>
     <div class="nav-mobile-cta">
+      <div class="nav-mobile-socials">
+        <a href="https://www.instagram.com/dc.agenciadeeventos" class="nav-mobile-soc" target="_blank"
+          rel="noopener noreferrer" aria-label="Instagram">
+          <svg style="width:18px;height:18px">
+            <use href="#icon-instagram" />
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/in/d-c-produ%C3%A7%C3%B5es-e-eventos-82583134a" class="nav-mobile-soc"
+          target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg style="width:18px;height:18px">
+            <use href="#icon-linkedin" />
+          </svg>
+        </a>
+        <a href="https://wa.me/5511965723939" class="nav-mobile-soc nav-mobile-soc--wa" target="_blank"
+          rel="noopener noreferrer" aria-label="WhatsApp">
+          <svg style="width:18px;height:18px">
+            <use href="#icon-wa" />
+          </svg>
+        </a>
+      </div>
       <a href="https://wa.me/5511965723939" class="nav-cta">
-        <svg class="wa-icon"><use href="#icon-wa"/></svg>
-        Solicitar Orçamento →
+        <svg class="wa-icon">
+          <use href="#icon-wa" />
+        </svg>
+        Solicitar Orçamento
       </a>
     </div>
   </div>
@@ -277,15 +385,8 @@
        HERO
   ═══════════════════════════════════════ -->
   <section class="hero" aria-label="Apresentação DC Produções">
-    <picture>
-      <source srcset="img/hero.webp" type="image/webp">
-      <img class="hero-img"
-           src="img/hero.png"
-           alt="Evento corporativo produzido pela DC Produções em São Paulo"
-           loading="eager"
-           fetchpriority="high"
-           width="1920" height="1080">
-    </picture>
+    <img class="hero-img" src="img/hero.webp" alt="Evento corporativo produzido pela DC Produções em São Paulo"
+      loading="eager" fetchpriority="high" width="1920" height="1080">
     <div class="hero-overlay"></div>
     <div class="hero-accent"></div>
 
@@ -311,8 +412,10 @@
 
         <div class="btn-row">
           <a href="https://wa.me/5511965723939" class="btn-p">
-            <svg class="wa-icon"><use href="#icon-wa"/></svg>
-            Solicitar Orçamento →
+            <svg class="wa-icon">
+              <use href="#icon-wa" />
+            </svg>
+            Solicitar Orçamento
           </a>
           <a href="#portfolio" class="btn-o">Ver Portfólio</a>
         </div>
@@ -352,7 +455,9 @@
 
     <div class="about-col">
       <p class="sec-label" data-reveal="left" data-delay="0.1">Quem Somos</p>
-      <h2 class="display" data-reveal="up" data-delay="0.15">REFERÊNCIA<br>EM <span>EVENTOS</span><br>& <span>AUDIOVISUAL</span></h2>
+      <h2 class="display" data-reveal="up" data-delay="0.15">REFERÊNCIA<br>EM <span>EVENTOS</span><br>&
+        <span>AUDIOVISUAL</span>
+      </h2>
       <p class="about-text">
         Fundada em 2019, a D.C Produções & Eventos nasceu para ser referência
         em soluções completas. Trabalhamos com transparência e seriedade,
@@ -360,18 +465,10 @@
         Cada evento é único, e tratamos ele como tal.
       </p>
       <div class="about-img-row">
-        <picture>
-          <source srcset="img/1.webp" type="image/webp">
-          <img src="img/1_20260619_220347_0000.png"
-               alt="Equipe DC Produções coordenando evento em São Paulo"
-               loading="lazy" width="450" height="300">
-        </picture>
-        <picture>
-          <source srcset="img/3.webp" type="image/webp">
-          <img src="img/3_20260619_220347_0002.png"
-               alt="Produção audiovisual profissional para eventos corporativos"
-               loading="lazy" width="450" height="300">
-        </picture>
+        <img src="img/1.webp" alt="Equipe DC Produções coordenando evento em São Paulo" loading="lazy" width="450"
+          height="300">
+        <img src="img/3.webp" alt="Produção audiovisual profissional para eventos corporativos" loading="lazy"
+          width="450" height="300">
       </div>
     </div>
 
@@ -384,7 +481,8 @@
           <span class="svc-num">01</span>
           <div>
             <div class="svc-info-title">Produção & Audiovisual</div>
-            <div class="svc-info-desc">Equipamentos de última geração e equipe técnica para experiências imersivas.</div>
+            <div class="svc-info-desc">Equipamentos de última geração e equipe técnica para experiências imersivas.
+            </div>
           </div>
         </div>
         <div class="svc-item">
@@ -425,65 +523,213 @@
        PORTFÓLIO
   ═══════════════════════════════════════ -->
   <section class="portfolio" id="portfolio" aria-label="Portfólio de eventos DC Produções">
+
+    <!-- Cabeçalho -->
     <div class="port-header">
       <div>
         <p class="sec-label" data-reveal="left">Alguns Trabalhos</p>
         <h2 class="display" data-reveal="up" data-delay="0.1">PROJETOS<br><span>EM DESTAQUE</span></h2>
-      </div>
-      <a href="https://www.instagram.com/dc.agenciadeeventos" class="btn-o"
-         target="_blank" rel="noopener noreferrer">
-        <svg class="wa-icon"><use href="#icon-instagram"/></svg>
-        Ver mais no Instagram →
+      </div><br>
+      <a href="https://www.instagram.com/dc.agenciadeeventos" class="btn-instagram" target="_blank"
+        rel="noopener noreferrer">
+        <svg class="wa-icon">
+          <use href="#icon-instagram" />
+        </svg>
+        Ver mais no Instagram
       </a>
     </div>
+    <div class="psg-wrap psg-desktop">
 
-    <div class="port-grid">
-      <div class="port-item p1">
-        <picture>
-          <source srcset="img/4.webp" type="image/webp">
-          <img src="img/4_20260619_220347_0003.png"
-               alt="Produção audiovisual profissional em evento DC Produções São Paulo"
-               loading="lazy" width="600" height="400">
-        </picture>
-        <span class="port-tag">Audiovisual</span>
+      <div class="psg-col psg-left">
+        <div class="port-item">
+          <img src="img/4.webp" alt="Produção audiovisual profissional em evento DC Produções" loading="lazy">
+          <div class="port-overlay"><span class="port-overlay-title">Audiovisual</span></div>
+
+        </div>
+        <div class="port-item">
+          <img src="img/15.webp" alt="Evento ao vivo com público e iluminação DC Produções" loading="lazy">
+          <div class="port-overlay"><span class="port-overlay-title">Ao Vivo</span></div>
+
+        </div>
+        <div class="port-item">
+          <img src="img/19.webp" alt="Palco e estrutura de grande porte DC Produções" loading="lazy">
+          <div class="port-overlay"><span class="port-overlay-title">Estrutura & Palco</span></div>
+
+        </div>
+        <div class="port-item">
+          <img src="img/22.webp" alt="Evento exclusivo produzido pela DC Produções" loading="lazy">
+          <div class="port-overlay"><span class="port-overlay-title">Exclusivo</span></div>
+
+        </div>
       </div>
-      <div class="port-item p2">
-        <picture>
-          <source srcset="img/9.webp" type="image/webp">
-          <img src="img/9_20260619_220348_0008.png"
-               alt="Cenografia e stand personalizado criado pela DC Produções"
-               loading="lazy" width="600" height="400">
-        </picture>
-        <span class="port-tag">Cenografia</span>
+
+      <div class="psg-col psg-center">
+        <div class="psg-sticky">
+          <div class="port-item">
+            <img src="img/9.webp" alt="Cenografia e stand personalizado DC Produções" loading="lazy">
+            <div class="port-overlay"><span class="port-overlay-title">Cenografia</span></div>
+
+          </div>
+          <div class="port-item">
+            <img src="img/17.webp" alt="Bastidores de produção de evento DC Produções" loading="lazy">
+            <div class="port-overlay"><span class="port-overlay-title">Making Of</span></div>
+
+          </div>
+          <div class="port-item">
+            <img src="img/11.webp" alt="Buffet e catering para eventos corporativos DC Produções" loading="lazy">
+            <div class="port-overlay"><span class="port-overlay-title">Buffet & Catering</span></div>
+
+          </div>
+
+          <div class="port-item">
+            <img src="img/22.webp" alt="Vista panorâmica de evento produzido pela DC Produções" loading="lazy">
+            <div class="port-overlay"><span class="port-overlay-title">Panorâmica</span></div>
+
+          </div>
+        </div>
       </div>
-      <div class="port-item p3">
-        <picture>
-          <source srcset="img/10.webp" type="image/webp">
-          <img src="img/10_20260619_220348_0009.png"
-               alt="Produção completa de evento com palco e iluminação profissional"
-               loading="lazy" width="600" height="400">
-        </picture>
-        <span class="port-tag">Produção</span>
+
+      <div class="psg-col psg-right">
+        <div class="port-item">
+          <img src="img/20.webp" alt="Produção com palco e iluminação profissional DC Produções" loading="lazy">
+          <div class="port-overlay"><span class="port-overlay-title">Produção</span></div>
+
+        </div>
+        <div class="port-item">
+          <img src="img/16.webp" alt="Cerimônia e recepção produzidas pela DC Produções" loading="lazy">
+          <div class="port-overlay"><span class="port-overlay-title">Cerimônia</span></div>
+
+        </div>
+        <div class="port-item">
+          <img src="img/18.webp" alt="Evento social fotografado pela DC Produções" loading="lazy">
+          <div class="port-overlay"><span class="port-overlay-title">Social</span></div>
+
+        </div>
+        <div class="port-item">
+          <img src="img/12.webp" alt="Evento corporativo coordenado pela DC Produções" loading="lazy">
+          <div class="port-overlay"><span class="port-overlay-title">Corporativo</span></div>
+
+        </div>
       </div>
-      <div class="port-item p4">
-        <picture>
-          <source srcset="img/11.webp" type="image/webp">
-          <img src="img/11_20260619_220348_0010.png"
-               alt="Buffet e catering profissional para eventos corporativos em São Paulo"
-               loading="lazy" width="600" height="400">
-        </picture>
-        <span class="port-tag">Buffet & Catering</span>
+
+    </div><!-- /psg-desktop -->
+
+    <!-- ── MOBILE: Swiper coverflow ── -->
+    <div class="swiper port-swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="port-item">
+            <picture>
+              <source srcset="img/4.webp" type="image/webp"><img src="img/4.webp" alt="Audiovisual DC Produções"
+                loading="lazy">
+            </picture>
+            <div class="port-overlay"><span class="port-overlay-title">Audiovisual</span></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="port-item">
+            <picture>
+              <source srcset="img/9.webp" type="image/webp"><img src="img/9.webp" alt="Cenografia DC Produções"
+                loading="lazy">
+            </picture>
+            <div class="port-overlay"><span class="port-overlay-title">Cenografia</span></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="port-item">
+            <picture>
+              <source srcset="img/15.webp" type="image/webp"><img src="img/15.webp" alt="Ao Vivo DC Produções"
+                loading="lazy">
+            </picture>
+            <div class="port-overlay"><span class="port-overlay-title">Ao Vivo</span></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="port-item">
+            <picture>
+              <source srcset="img/10.webp" type="image/webp"><img src="img/10.webp" alt="Produção DC Produções"
+                loading="lazy">
+            </picture>
+            <div class="port-overlay"><span class="port-overlay-title">Produção</span></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="port-item">
+            <picture>
+              <source srcset="img/19.webp" type="image/webp"><img src="img/19.webp" alt="Estrutura e Palco DC Produções"
+                loading="lazy">
+            </picture>
+            <div class="port-overlay"><span class="port-overlay-title">Estrutura & Palco</span></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="port-item">
+            <picture>
+              <source srcset="img/17.webp" type="image/webp"><img src="img/17.webp" alt="Making Of DC Produções"
+                loading="lazy">
+            </picture>
+            <div class="port-overlay"><span class="port-overlay-title">Making Of</span></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="port-item">
+            <picture>
+              <source srcset="img/16.webp" type="image/webp"><img src="img/16.webp" alt="Cerimônia DC Produções"
+                loading="lazy">
+            </picture>
+            <div class="port-overlay"><span class="port-overlay-title">Cerimônia</span></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="port-item">
+            <picture>
+              <source srcset="img/21.webp" type="image/webp"><img src="img/21.webp" alt="Panorâmica DC Produções"
+                loading="lazy">
+            </picture>
+            <div class="port-overlay"><span class="port-overlay-title">Panorâmica</span></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="port-item">
+            <picture>
+              <source srcset="img/18.webp" type="image/webp"><img src="img/18.webp" alt="Social DC Produções"
+                loading="lazy">
+            </picture>
+            <div class="port-overlay"><span class="port-overlay-title">Social</span></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="port-item">
+            <picture>
+              <source srcset="img/22.webp" type="image/webp"><img src="img/22.webp" alt="Exclusivo DC Produções"
+                loading="lazy">
+            </picture>
+            <div class="port-overlay"><span class="port-overlay-title">Exclusivo</span></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="port-item">
+            <picture>
+              <source srcset="img/11.webp" type="image/webp"><img src="img/11.webp" alt="Buffet DC Produções"
+                loading="lazy">
+            </picture>
+            <div class="port-overlay"><span class="port-overlay-title">Buffet & Catering</span></div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="port-item">
+            <picture>
+              <source srcset="img/12.webp" type="image/webp"><img src="img/12.webp" alt="Corporativo DC Produções"
+                loading="lazy">
+            </picture>
+            <div class="port-overlay"><span class="port-overlay-title">Corporativo</span></div>
+          </div>
+        </div>
       </div>
-      <div class="port-item p5">
-        <picture>
-          <source srcset="img/12.webp" type="image/webp">
-          <img src="img/12_20260619_220348_0011.png"
-               alt="Evento corporativo coordenado pela DC Produções em São Paulo"
-               loading="lazy" width="600" height="400">
-        </picture>
-        <span class="port-tag">Corporativo</span>
-      </div>
+      <div class="swiper-pagination port-swiper-pagination"></div>
     </div>
+    <!-- /port-swiper -->
+
   </section>
 
 
@@ -500,15 +746,6 @@
         <p class="test-header-desc">
           Avaliações reais de clientes que confiaram na DC Produções para seus eventos.
         </p>
-        <div class="test-nav-inline">
-          <span class="test-counter"><span id="testCurrent">1</span> / <span id="testTotal">2</span></span>
-          <button class="test-btn" id="testPrev" aria-label="Anterior">
-            <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
-          </button>
-          <button class="test-btn" id="testNext" aria-label="Próximo">
-            <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg>
-          </button>
-        </div>
       </div>
     </div>
 
@@ -521,15 +758,28 @@
 
           <div class="test-card">
             <div class="test-stars">
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
             </div>
-            <p class="test-quote">"A DC Produções superou todas as nossas expectativas. A estrutura de palco, iluminação e som do nosso evento corporativo ficou impecável. Equipe extremamente profissional do início ao fim."</p>
+            <p class="test-quote">"A DC Produções superou todas as nossas expectativas. A estrutura de palco, iluminação
+              e som do nosso evento corporativo ficou impecável. Equipe extremamente profissional do início ao fim."</p>
             <div class="test-author">
-              <img class="test-avatar" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=68&h=68&fit=crop&crop=face" alt="Ricardo Almeida" loading="lazy">
+              <img class="test-avatar"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=68&h=68&fit=crop&crop=face"
+                alt="Ricardo Almeida" loading="lazy">
               <span class="test-author-name">Ricardo Almeida</span>
               <span class="test-author-sep"></span>
               <span class="test-author-role">Diretor Comercial · OAB-SP</span>
@@ -538,15 +788,29 @@
 
           <div class="test-card">
             <div class="test-stars">
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
             </div>
-            <p class="test-quote">"Contratamos para o lançamento do nosso produto e o resultado foi incrível. Stand personalizado, audiovisual de altíssimo nível e buffet que agradou a todos os convidados. Recomendo sem hesitar."</p>
+            <p class="test-quote">"Contratamos para o lançamento do nosso produto e o resultado foi incrível. Stand
+              personalizado, audiovisual de altíssimo nível e buffet que agradou a todos os convidados. Recomendo sem
+              hesitar."</p>
             <div class="test-author">
-              <img class="test-avatar" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=68&h=68&fit=crop&crop=face" alt="Fernanda Costa" loading="lazy">
+              <img class="test-avatar"
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=68&h=68&fit=crop&crop=face"
+                alt="Fernanda Costa" loading="lazy">
               <span class="test-author-name">Fernanda Costa</span>
               <span class="test-author-sep"></span>
               <span class="test-author-role">Gerente de Marketing · Xiaomi</span>
@@ -555,13 +819,25 @@
 
           <div class="test-card">
             <div class="test-stars">
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
             </div>
-            <p class="test-quote">"Festival de 3 dias com mais de 5 mil pessoas. A DC Produções cuidou de tudo — palco, som, iluminação, segurança técnica e mão de obra. Zero imprevistos. Voltaremos a contratar com certeza."</p>
+            <p class="test-quote">"Festival de 3 dias com mais de 5 mil pessoas. A DC Produções cuidou de tudo — palco,
+              som, iluminação, segurança técnica e mão de obra. Zero imprevistos. Voltaremos a contratar com certeza."
+            </p>
             <div class="test-author">
               <div class="test-avatar-fallback">M</div>
               <span class="test-author-name">Marcelo Vieira</span>
@@ -572,15 +848,28 @@
 
           <div class="test-card">
             <div class="test-stars">
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star empty"><use href="#icon-star"/></svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star empty">
+                <use href="#icon-star" />
+              </svg>
             </div>
-            <p class="test-quote">"A cenografia do nosso evento de confraternização ficou além do esperado. Atendimento impecável e entrega no prazo. A equipe tem um cuidado especial com cada detalhe da produção."</p>
+            <p class="test-quote">"A cenografia do nosso evento de confraternização ficou além do esperado. Atendimento
+              impecável e entrega no prazo. A equipe tem um cuidado especial com cada detalhe da produção."</p>
             <div class="test-author">
-              <img class="test-avatar" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=68&h=68&fit=crop&crop=face" alt="Ana Paula Ramos" loading="lazy">
+              <img class="test-avatar"
+                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=68&h=68&fit=crop&crop=face"
+                alt="Ana Paula Ramos" loading="lazy">
               <span class="test-author-name">Ana Paula Ramos</span>
               <span class="test-author-sep"></span>
               <span class="test-author-role">Coord. de Eventos · Maccaferri</span>
@@ -589,15 +878,29 @@
 
           <div class="test-card">
             <div class="test-stars">
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
             </div>
-            <p class="test-quote">"Contratei a DC para o meu casamento e foi a melhor decisão. O buffet estava delicioso, a decoração linda e a equipe de coordenação garantiu que tudo corresse perfeito. Noite inesquecível!"</p>
+            <p class="test-quote">"Contratei a DC para o meu casamento e foi a melhor decisão. O buffet estava
+              delicioso, a decoração linda e a equipe de coordenação garantiu que tudo corresse perfeito. Noite
+              inesquecível!"</p>
             <div class="test-author">
-              <img class="test-avatar" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=68&h=68&fit=crop&crop=face" alt="Juliana Mendes" loading="lazy">
+              <img class="test-avatar"
+                src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=68&h=68&fit=crop&crop=face"
+                alt="Juliana Mendes" loading="lazy">
               <span class="test-author-name">Juliana Mendes</span>
               <span class="test-author-sep"></span>
               <span class="test-author-role">Cliente Particular</span>
@@ -606,13 +909,25 @@
 
           <div class="test-card">
             <div class="test-stars">
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
             </div>
-            <p class="test-quote">"Utilizamos a DC Produções para nossa convenção anual de vendas. Mais de 300 participantes e tudo funcionou perfeitamente — projeção, som, palco e credenciamento. Parceria renovada para o próximo ano."</p>
+            <p class="test-quote">"Utilizamos a DC Produções para nossa convenção anual de vendas. Mais de 300
+              participantes e tudo funcionou perfeitamente — projeção, som, palco e credenciamento. Parceria renovada
+              para o próximo ano."</p>
             <div class="test-author">
               <div class="test-avatar-fallback">C</div>
               <span class="test-author-name">Carlos Eduardo</span>
@@ -623,15 +938,29 @@
 
           <div class="test-card">
             <div class="test-stars">
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
             </div>
-            <p class="test-quote">"Precisamos de mão de obra especializada para montar uma estrutura complexa em tempo recorde. A DC entregou com qualidade e segurança. Profissionalismo que faz diferença em momentos críticos."</p>
+            <p class="test-quote">"Precisamos de mão de obra especializada para montar uma estrutura complexa em tempo
+              recorde. A DC entregou com qualidade e segurança. Profissionalismo que faz diferença em momentos
+              críticos."</p>
             <div class="test-author">
-              <img class="test-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=68&h=68&fit=crop&crop=face" alt="Paulo Henrique" loading="lazy">
+              <img class="test-avatar"
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=68&h=68&fit=crop&crop=face"
+                alt="Paulo Henrique" loading="lazy">
               <span class="test-author-name">Paulo Henrique</span>
               <span class="test-author-sep"></span>
               <span class="test-author-role">Gerente de Operações</span>
@@ -640,15 +969,29 @@
 
           <div class="test-card">
             <div class="test-stars">
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
-              <svg class="test-star"><use href="#icon-star"/></svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
+              <svg class="test-star">
+                <use href="#icon-star" />
+              </svg>
             </div>
-            <p class="test-quote">"Do orçamento à execução, a comunicação foi clara e rápida. Entregaram exatamente o que prometeram para o nosso show. É raro encontrar uma empresa de eventos tão organizada e comprometida."</p>
+            <p class="test-quote">"Do orçamento à execução, a comunicação foi clara e rápida. Entregaram exatamente o
+              que prometeram para o nosso show. É raro encontrar uma empresa de eventos tão organizada e comprometida."
+            </p>
             <div class="test-author">
-              <img class="test-avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=68&h=68&fit=crop&crop=face" alt="Larissa Torres" loading="lazy">
+              <img class="test-avatar"
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=68&h=68&fit=crop&crop=face"
+                alt="Larissa Torres" loading="lazy">
               <span class="test-author-name">Larissa Torres</span>
               <span class="test-author-sep"></span>
               <span class="test-author-role">Produtora Musical · SP</span>
@@ -657,6 +1000,19 @@
 
         </div>
       </div>
+    </div>
+    <div class="test-nav-inline">
+      <span class="test-counter"><span id="testCurrent">1</span> / <span id="testTotal">2</span></span>
+      <button class="test-btn" id="testPrev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
+      </button>
+      <button class="test-btn" id="testNext" aria-label="Próximo">
+        <svg viewBox="0 0 24 24">
+          <polyline points="9 6 15 12 9 18" />
+        </svg>
+      </button>
     </div>
   </section>
 
@@ -668,7 +1024,8 @@
     <div class="clients-header">
       <div>
         <p class="sec-label" data-reveal="left">Clientes</p>
-        <h2 class="display" data-reveal="up" data-delay="0.1">EMPRESAS QUE<br>CONFIAM EM<br><span>NOSSO TRABALHO</span></h2>
+        <h2 class="display" data-reveal="up" data-delay="0.1">EMPRESAS QUE<br>CONFIAM EM<br><span>NOSSO TRABALHO</span>
+        </h2>
       </div>
       <p style="font-size:13px;color:var(--muted);max-width:280px;line-height:1.7">
         A DC Produções tem o orgulho de contar com a confiança de diversas
@@ -678,43 +1035,30 @@
 
     <div class="clients-grid" data-stagger>
       <div class="client-cell">
-        <img src="img/monster.webp"     alt="Monster Energy — cliente DC Produções"  loading="lazy" width="120" height="60">
+        <img src="img/monster.webp" alt="Monster Energy — cliente DC Produções" loading="lazy" width="120" height="60">
       </div>
       <div class="client-cell">
-        <picture>
-          <source srcset="img/oab.webp" type="image/webp">
-          <img src="img/oab.png" alt="OAB-SP — cliente DC Produções" loading="lazy" width="120" height="60">
-        </picture>
+        <img src="img/oab.webp" alt="OAB-SP — cliente DC Produções" loading="lazy" width="120" height="60">
       </div>
       <div class="client-cell">
-        <img src="img/xiaomi.svg"       alt="Xiaomi — cliente DC Produções"          loading="lazy" width="120" height="60">
+        <img src="img/xiaomi.svg" alt="Xiaomi — cliente DC Produções" loading="lazy" width="120" height="60">
       </div>
       <div class="client-cell">
-        <img src="img/baciodilatte.webp" alt="Bacio di Latte — cliente DC Produções" loading="lazy" width="120" height="60">
+        <img src="img/baciodilatte.webp" alt="Bacio di Latte — cliente DC Produções" loading="lazy" width="120"
+          height="60">
       </div>
       <div class="client-cell">
-        <picture>
-          <source srcset="img/maccaferri.webp" type="image/webp">
-          <img src="img/maccaferri.png" alt="Maccaferri — cliente DC Produções" loading="lazy" width="120" height="60">
-        </picture>
+        <img src="img/maccaferri.webp" alt="Maccaferri — cliente DC Produções" loading="lazy" width="120" height="60">
       </div>
       <div class="client-cell">
-        <picture>
-          <source srcset="img/aphrodite-egg-bank.png" type="image/webp">
-          <img src="img/aphrodite-egg-bank.png" alt="Aphrodite Egg Bank — cliente DC Produções" loading="lazy" width="120" height="60">
-        </picture>
+        <img src="img/aphrodite-egg-bank.png" alt="Aphrodite Egg Bank — cliente DC Produções" loading="lazy" width="120"
+          height="60">
       </div>
       <div class="client-cell">
-        <picture>
-          <source srcset="img/oceanus.png" type="image/webp">
-          <img src="img/oceanus.png" alt="Oceanus — cliente DC Produções" loading="lazy" width="120" height="60">
-        </picture>
+        <img src="img/oceanus.png" alt="Oceanus — cliente DC Produções" loading="lazy" width="120" height="60">
       </div>
       <div class="client-cell">
-        <picture>
-          <source srcset="img/negrao.png" type="image/webp">
-          <img src="img/negrao.png" alt="Negrao — cliente DC Produções" loading="lazy" width="120" height="60">
-        </picture>
+        <img src="img/negrao.png" alt="Negrao — cliente DC Produções" loading="lazy" width="120" height="60">
       </div>
     </div>
   </section>
@@ -750,7 +1094,8 @@
     <div class="contact-container">
       <div class="contact-header" data-reveal="up">
         <h2 class="contact-title">ENVIE SEU<br><span>ORÇAMENTO</span></h2>
-        <p class="contact-subtitle">Preencha os dados abaixo e nós entraremos em contato via WhatsApp para detalhar sua solicitação</p>
+        <p class="contact-subtitle">Preencha os dados abaixo e nós entraremos em contato via WhatsApp para detalhar sua
+          solicitação</p>
       </div>
 
       <form id="contactForm" class="contact-form">
@@ -871,7 +1216,9 @@
         </div>
 
         <button type="submit" class="form-submit">
-          <svg class="wa-icon"><use href="#icon-wa"/></svg>
+          <svg class="wa-icon">
+            <use href="#icon-wa" />
+          </svg>
           Enviar para WhatsApp →
         </button>
         <div id="formFeedback" class="form-feedback"></div>
@@ -885,76 +1232,122 @@
   ═══════════════════════════════════════ -->
   <footer class="bottom" id="contato" itemscope itemtype="https://schema.org/Organization">
 
-    <div class="cta-row">
-      <div data-reveal="left">
-        <h2 class="cta-title">PRONTO PARA UM<br>EVENTO <span>EXTRAORDINÁRIO?</span></h2>
-        <p class="cta-sub">Fale com nossa equipe e transforme sua ideia em realidade.<br>Atendimento em todo o Brasil.</p>
-      </div>
-      <div class="cta-btns" data-reveal="right" data-delay="0.1">
-        <a href="https://wa.me/5511965723939" class="btn-p">
-          <svg class="wa-icon"><use href="#icon-wa"/></svg>
-          WhatsApp →
-        </a>
-        <a href="https://dcproducoes.com.br/contato/" class="btn-o">Formulário de Contato</a>
-      </div>
-    </div>
-
-    <div class="footer-row">
-      <div>
-        <div class="foot-brand">DC <span>Produções</span></div>
-        <p class="foot-tagline">
-          Especialistas em eventos corporativos,<br>
-          shows e festas. Desde 2019, São Paulo.
-        </p>
-        <div class="foot-socials">
-          <a href="https://www.instagram.com/dc.agenciadeeventos" class="soc"
-             target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-            <svg style="width:16px;height:16px"><use href="#icon-instagram"/></svg>
+    <!-- CTA Strip -->
+    <div class="cta-strip">
+      <div class="cta-strip-inner">
+        <div class="cta-strip-text" data-reveal="left">
+          <p class="cta-eyebrow">Pronto para o próximo evento?</p>
+          <h2 class="cta-title">TRANSFORME SUA<br>IDEIA EM UM EVENTO<br><span>INESQUECÍVEL</span></h2>
+        </div>
+        <div class="cta-strip-actions" data-reveal="right" data-delay="0.1">
+          <a href="https://wa.me/5511965723939" class="cta-strip-btn cta-strip-btn--primary">
+            <svg class="wa-icon">
+              <use href="#icon-wa" />
+            </svg>
+            Falar no WhatsApp
           </a>
-          <a href="https://www.linkedin.com/in/d-c-produ%C3%A7%C3%B5es-e-eventos-82583134a" class="soc"
-             target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <svg style="width:16px;height:16px"><use href="#icon-linkedin"/></svg>
-          </a>
-          <a href="https://wa.me/5511965723939" class="soc" aria-label="WhatsApp">
-            <svg style="width:16px;height:16px"><use href="#icon-wa"/></svg>
-          </a>
+          <a href="#form-contato" class="cta-strip-btn cta-strip-btn--outline">Enviar Orçamento</a>
         </div>
       </div>
+    </div>
 
-      <div>
-        <p class="foot-col-label">Serviços</p>
-        <ul class="foot-links">
-          <li><a href="#servicos">Produção Audiovisual</a></li>
-          <li><a href="#servicos">Stands & Cenografia</a></li>
-          <li><a href="#servicos">Buffet & Catering</a></li>
-          <li><a href="#servicos">Organização de Eventos</a></li>
-          <li><a href="#servicos">Mão de Obra Técnica</a></li>
-        </ul>
-      </div>
+    <!-- Footer Main -->
+    <div class="footer-main">
+      <div class="footer-main-inner">
 
-      <div>
-        <p class="foot-col-label">Contato</p>
-        <ul class="foot-links">
-          <li>
-            <a href="https://wa.me/5511965723939" itemprop="telephone">
-              <svg class="wa-icon"><use href="#icon-wa"/></svg>
-              (11) 96572-3939
+        <!-- Coluna 1: Marca -->
+        <div class="foot-col foot-col--brand">
+          <div class="foot-logo-wrap">
+            <h6>DC Produções <span>& Eventos</span></h6>
+          </div>
+          <p class="foot-tagline">
+            Especialistas em eventos corporativos,<br>
+            shows e festivais. Desde 2019, São Paulo.
+          </p>
+          <div class="foot-socials">
+            <a href="https://www.instagram.com/dc.agenciadeeventos" class="soc" target="_blank"
+              rel="noopener noreferrer" aria-label="Instagram">
+              <svg style="width:16px;height:16px">
+                <use href="#icon-instagram" />
+              </svg>
             </a>
-          </li>
-          <li><a href="https://dcproducoes.com.br/contato/">dcproducoes.com.br</a></li>
-          <li><span>Zona Sul de São Paulo — SP</span></li>
-          <li><span>Próximo ao Metrô Butantã</span></li>
-        </ul>
+            <a href="https://www.linkedin.com/in/d-c-produ%C3%A7%C3%B5es-e-eventos-82583134a" class="soc"
+              target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg style="width:16px;height:16px">
+                <use href="#icon-linkedin" />
+              </svg>
+            </a>
+            <a href="https://wa.me/5511965723939" class="soc" aria-label="WhatsApp">
+              <svg style="width:16px;height:16px">
+                <use href="#icon-wa" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Coluna 2: Serviços -->
+        <div class="foot-col">
+          <p class="foot-col-label">Serviços</p>
+          <ul class="foot-links">
+            <li><a href="#servicos">Produção Audiovisual</a></li>
+            <li><a href="#servicos">Stands & Cenografia</a></li>
+            <li><a href="#servicos">Buffet & Catering</a></li>
+            <li><a href="#servicos">Organização de Eventos</a></li>
+            <li><a href="#servicos">Mão de Obra Técnica</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 3: Links -->
+        <div class="foot-col">
+          <p class="foot-col-label">Navegação</p>
+          <ul class="foot-links">
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#form-contato">Solicitar Orçamento</a></li>
+            <li><a href="privacidade.html">Política de Privacidade</a></li>
+            <li><a href="termos.html">Termos de Uso</a></li>
+          </ul>
+        </div>
+
+        <!-- Coluna 4: Contato -->
+        <div class="foot-col">
+          <p class="foot-col-label">Contato</p>
+          <ul class="foot-links foot-links--contact">
+            <li>
+              <a href="https://wa.me/5511965723939" itemprop="telephone" class="foot-contact-link">
+                <span class="foot-contact-icon">
+                  <svg style="width:14px;height:14px">
+                    <use href="#icon-wa" />
+                  </svg>
+                </span>
+                <span>(11) 96572-3939</span>
+              </a>
+            </li>
+            <li>
+              <a href="mailto:contato@dcproducoes.com.br" class="foot-contact-link">
+                <span class="foot-contact-icon foot-contact-icon--mail">@</span>
+                <span>contato@dcproducoes.com.br</span>
+              </a>
+            </li>
+            <li class="foot-contact-item">
+              <span class="foot-contact-icon foot-contact-icon--pin">✦</span>
+              <span>Zona Sul · São Paulo, SP</span>
+            </li>
+            <li class="foot-contact-item">
+              <span class="foot-contact-icon foot-contact-icon--clock">◷</span>
+              <span>Seg–Sex, 9h–18h</span>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
 
+    <!-- Footer Bottom Bar -->
     <div class="foot-bottom">
       <span class="foot-copy">© 2026 DC Produções & Eventos. Todos os direitos reservados.</span>
-      <div class="foot-legal-links">
-        <a href="privacidade.html">Privacidade</a>
-        <a href="cookies.html">Cookies</a>
-        <a href="termos.html">Termos de Uso</a>
-      </div>
+      <span class="foot-copy">Feito por <a href="https://orbitastudio.com.br" target="_blank" rel="noopener noreferrer"
+          class="foot-col-label">Orbita Studio Web</a></span>
       <span class="foot-copy">São Paulo — Brasil</span>
     </div>
 
@@ -964,19 +1357,22 @@
   <!-- ═══════════════════════════════════════
        WIDGETS FLUTUANTES
   ═══════════════════════════════════════ -->
-  <a href="https://wa.me/5511965723939" class="wa-fab"
-     aria-label="Falar no WhatsApp" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="currentColor"><use href="#icon-wa"/></svg>
+  <a href="https://wa.me/5511965723939" class="wa-fab" aria-label="Falar no WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <use href="#icon-wa" />
+    </svg>
   </a>
 
   <div id="cookieBanner" role="dialog" aria-label="Preferências de cookies">
     <div class="cookie-main">
       <div class="cookie-text">
         <strong>🍪 Utilizamos cookies</strong>
-        <p>Usamos cookies essenciais para o funcionamento do site e, com sua permissão, cookies analíticos para melhorar sua experiência. Consulte nossa <a href="privacidade.html">Política de Privacidade</a> e <a href="cookies.html">Política de Cookies</a>.</p>
+        <p>Usamos cookies essenciais para o funcionamento do site e, com sua permissão, cookies analíticos para melhorar
+          sua experiência. Consulte nossa <a href="privacidade.html">Política de Privacidade</a> e <a
+            href="cookies.html">Política de Cookies</a>.</p>
       </div>
       <div class="cookie-actions">
-        <button class="cookie-btn cookie-btn--accept"    onclick="acceptAll()">Aceitar todos</button>
+        <button class="cookie-btn cookie-btn--accept" onclick="acceptAll()">Aceitar todos</button>
         <button class="cookie-btn cookie-btn--essential" onclick="acceptEssential()">Só essenciais</button>
         <button class="cookie-btn cookie-btn--customize" onclick="showDetails()">Personalizar</button>
       </div>
@@ -1021,6 +1417,9 @@
   </div>
 
 
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
   <!-- Scripts -->
   <script src="js/cookies.js"></script>
   <script src="js/nav.js"></script>
@@ -1030,4 +1429,5 @@
   <script src="js/transitions.js"></script>
 
 </body>
+
 </html>

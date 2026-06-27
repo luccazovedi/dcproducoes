@@ -20,14 +20,14 @@
 }
 
 .test-header-desc {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--muted);
   max-width: 280px;
   line-height: 1.7;
   text-align: right;
 }
 
-.test-nav-inline { display: flex; align-items: center; gap: 8px; }
+.test-nav-inline { display: flex; align-items: center; gap: 8px; margin-top: 1em; }
 
 .test-btn {
   width: 44px; height: 44px;
@@ -80,9 +80,15 @@
 .test-track {
   display: flex;
   gap: 16px;
-  transition: transform .5s cubic-bezier(0.32, 0.08, 0.24, 1);
+  transition: transform .45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   will-change: transform;
+  cursor: grab;
+  touch-action: pan-y;
 }
+.test-track.is-dragging {
+  transition: none;
+}
+.test-track:active { cursor: grabbing; }
 
 .test-card {
   flex: 0 0 calc((100% - 48px) / 4);
@@ -126,13 +132,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   color: #fff;
   flex-shrink: 0;
   border: 1px solid rgba(10,14,39,.08);
 }
 
-.test-author-name { font-size: 13px; font-weight: 600; color: var(--primary); line-height: 1.2; }
+.test-author-name { font-size: 15px; font-weight: 600; color: var(--primary); line-height: 1.2; }
 .test-author-sep { width: 4px; height: 4px; border-radius: 50%; background: rgba(10,14,39,.2); flex-shrink: 0; }
 .test-author-role { font-size: 12px; color: var(--muted); line-height: 1.2; }

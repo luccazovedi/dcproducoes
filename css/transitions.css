@@ -244,7 +244,7 @@ body:hover .cursor-ring { opacity: 1; }
   animation: goldShimmer 4s linear infinite;
 }
 
-/* ── PORTFOLIO HOVER OVERLAY ── */
+/* ── PORTFOLIO OVERLAY (sempre visível) ── */
 .port-overlay {
   position: absolute;
   inset: 0;
@@ -254,22 +254,17 @@ body:hover .cursor-ring { opacity: 1; }
     rgba(10,14,39,.3) 50%,
     transparent 100%
   );
-  opacity: 0;
-  transition: opacity .5s cubic-bezier(0.22, 1, 0.36, 1);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding: 20px;
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
 .port-overlay-title {
   font-size: 14px;
   font-weight: 600;
   color: #ffffff;
-  transform: translateY(12px);
-  transition: transform .4s cubic-bezier(0.22, 1, 0.36, 1);
-  opacity: 0;
 }
 
 .port-overlay-arrow {
@@ -280,9 +275,6 @@ body:hover .cursor-ring { opacity: 1; }
   align-items: center;
   justify-content: center;
   align-self: flex-end;
-  transform: translateY(12px) scale(0.7);
-  transition: transform .4s cubic-bezier(0.22, 1, 0.36, 1) .05s;
-  opacity: 0;
 }
 
 .port-overlay-arrow svg {
@@ -293,10 +285,6 @@ body:hover .cursor-ring { opacity: 1; }
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-
-.port-item:hover .port-overlay            { opacity: 1; }
-.port-item:hover .port-overlay-title      { transform: none; opacity: 1; }
-.port-item:hover .port-overlay-arrow      { transform: none; opacity: 1; }
 
 /* ── SERVICE ITEM ENHANCED ── */
 .svc-item {

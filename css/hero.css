@@ -1,7 +1,7 @@
 /* ── HERO ── */
 .hero {
   position: relative;
-  height: calc(100dvh - var(--nav-h));
+  height: 100dvh;
   min-height: 560px;
   display: flex;
   flex-direction: column;

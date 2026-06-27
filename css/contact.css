@@ -26,7 +26,7 @@
 
 .form-group label {
   display: block;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--primary);
   margin-bottom: 8px;
@@ -126,15 +126,15 @@
   gap: 8px;
   cursor: pointer;
   white-space: nowrap;
-  font-size: 13px;
+  font-size: 15px;
   color: var(--muted);
   user-select: none;
   flex-shrink: 0;
 }
 
 .form-checkbox-label input[type="checkbox"] { width: 16px; height: 16px; accent-color: var(--gold); cursor: pointer; flex-shrink: 0; }
-.form-checkbox-label span { font-size: 13px; font-weight: 500; color: var(--primary); }
+.form-checkbox-label span { font-size: 15px; font-weight: 500; color: var(--primary); }
 
-.form-feedback { text-align: center; margin-top: 16px; font-size: 13px; color: var(--muted); }
+.form-feedback { text-align: center; margin-top: 16px; font-size: 15px; color: var(--muted); }
 .form-feedback.success { color: #10b981; }
 .form-feedback.error { color: #ef4444; }

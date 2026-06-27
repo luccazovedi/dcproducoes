@@ -35,6 +35,28 @@ Site institucional da DC Produções — empresa especializada em produção de 
 │   ├── form.js         # Formulário de orçamento (WhatsApp)
 │   └── cookies.js      # Banner de cookies
 ├── img/                # Assets WebP otimizados
+│   ├── hero.webp       # Hero principal
+│   ├── logo.webp       # Logotipo
+│   ├── 1.webp          # About — equipe em evento
+│   ├── 3.webp          # About — bastidores
+│   ├── 4.webp          # Portfólio — audiovisual
+│   ├── 9.webp          # Portfólio — cenografia
+│   ├── 10.webp         # Portfólio — palco e iluminação
+│   ├── 11.webp         # Portfólio — buffet e catering
+│   ├── 12.webp         # Portfólio — corporativo
+│   ├── 15.webp         # Portfólio — ao vivo com público
+│   ├── 16.webp         # Portfólio — cerimônia e recepção
+│   ├── 17.webp         # Portfólio — bastidores (making of)
+│   ├── 18.webp         # Portfólio — evento social
+│   ├── 19.webp         # Portfólio — palco/estrutura grande porte
+│   ├── 20.webp         # Portfólio — iluminação profissional
+│   ├── 21.webp         # Portfólio — vista panorâmica
+│   ├── 22.webp         # Portfólio — evento exclusivo
+│   ├── 23.webp         # Portfólio — adicional
+│   ├── monster.webp    # Logo cliente Monster
+│   ├── baciodilatte.webp # Logo cliente Bacio di Latte
+│   ├── oab.webp        # Logo cliente OAB
+│   └── maccaferri.webp # Logo cliente Maccaferri
 ├── scripts/
 │   └── optimize-images.js  # Converte PNG → WebP com Sharp
 ├── sitemap.xml
@@ -54,7 +76,7 @@ Converte imagens em `img/` para WebP com qualidade 85.
 
 ## Funcionalidades
 
-- **SEO completo** — Schema.org, Open Graph, hreflang, sitemap, robots.txt, llms.txt
+- **SEO completo** — Schema.org, Open Graph, hreflang, sitemap com image sitemap, robots.txt, llms.txt
 - **Core Web Vitals** — LCP otimizado, imagens lazy, CSS crítico inline, preload hero
 - **Transições premium** — scroll reveals, cursor customizado, parallax, magnetic cards, gold shimmer
 - **Formulário** — envia orçamento direto via WhatsApp com campos condicionais

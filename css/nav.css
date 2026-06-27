@@ -53,13 +53,13 @@
 .logo:hover { transform: scale(1.05); }
 
 .logo img {
-  height: 34px;
+  height: 6em;
   width: auto;
   filter: none;
   transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.site-header.scrolled .logo img { height: 28px; }
+.site-header.scrolled .logo img { height: 4em; }
 
 .nav-links {
   display: flex;
@@ -192,6 +192,33 @@
 
 .nav-mobile-links a:hover { background: rgba(251,191,36,.08); color: var(--blue); padding-left: 18px; }
 
-.nav-mobile-cta { display: flex; flex-direction: column; gap: 10px; }
+.nav-mobile-cta { display: flex; flex-direction: column; gap: 14px; }
+
+.nav-mobile-socials {
+  display: flex;
+  gap: 8px;
+}
+
+.nav-mobile-soc {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  border-radius: 14px;
+  border: 1px solid rgba(10,14,39,.12);
+  background: #ffffff;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+.nav-mobile-soc:hover { background: rgba(251,191,36,.08); border-color: var(--gold); transform: translateY(-2px); }
+.nav-mobile-soc:active { transform: scale(0.96); }
 
 .nav-mobile-cta .nav-cta { display: block; text-align: center; padding: 14px 24px; font-size: 12px; border-radius: 14px; }
