@@ -61,7 +61,6 @@
   <link rel="preload" as="image" href="img/hero.webp" fetchpriority="high" type="image/webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://images.unsplash.com">
   <link
     href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500&display=swap"
     rel="stylesheet">
@@ -176,7 +175,7 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": ["EventPlanner", "ProfessionalService"],
         "@id": "https://dcproducoes.com.br/#localbusiness",
         "name": "DC Produções & Eventos",
         "alternateName": "DC Produções",
@@ -194,8 +193,25 @@
           "addressCountry": "BR"
         },
         "geo": { "@type": "GeoCoordinates", "latitude": -23.5505, "longitude": -46.6333 },
-        "areaServed": { "@type": "Country", "name": "Brazil" },
+        "areaServed": [
+          { "@type": "City", "name": "São Paulo" },
+          { "@type": "State", "name": "São Paulo" },
+          { "@type": "Country", "name": "Brazil" }
+        ],
         "priceRange": "$$",
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+5511965723939",
+          "areaServed": "BR",
+          "availableLanguage": "Portuguese"
+        },
         "sameAs": [
           "https://www.instagram.com/dc.agenciadeeventos",
           "https://www.linkedin.com/in/d-c-produ%C3%A7%C3%B5es-e-eventos-82583134a",
@@ -232,18 +248,7 @@
         "name": "DC Produções & Eventos",
         "description": "Empresa especializada em eventos corporativos, shows e festivais em São Paulo.",
         "publisher": { "@id": "https://dcproducoes.com.br/#localbusiness" },
-        "inLanguage": "pt-BR",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": { "@type": "EntryPoint", "urlTemplate": "https://dcproducoes.com.br/?s={search_term_string}" },
-          "query-input": "required name=search_term_string"
-        }
-      },
-      {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://dcproducoes.com.br/" }
-        ]
+        "inLanguage": "pt-BR"
       },
       {
         "@type": "FAQPage",
@@ -319,16 +324,18 @@
     <nav>
       <a href="/" class="logo" aria-label="DC Produções & Eventos — Página Inicial">
         <img src="img/logo.webp" alt="DC Produções & Eventos" width="140" height="40">
+        <span class="logo-text">DC Produções <span>& Eventos</span></span>
       </a>
-
       <ul class="nav-links">
         <li><a href="#sobre">Sobre</a></li>
         <li><a href="#servicos">Serviços</a></li>
         <li><a href="#portfolio">Portfólio</a></li>
+        <li><a href="#faq">FAQ</a></li>
         <li><a href="#form-contato">Orçamento</a></li>
+        <li><a href="#parceiros">Parceirias</a></li>
       </ul>
-
-      <a href="https://wa.me/5511965723939" class="nav-cta">
+      
+      <a href="#form-contato" class="nav-cta">
         <svg class="wa-icon">
           <use href="#icon-wa" />
         </svg>
@@ -348,7 +355,9 @@
       <li><a href="#sobre" class="nav-mobile-link">Sobre</a></li>
       <li><a href="#servicos" class="nav-mobile-link">Serviços</a></li>
       <li><a href="#portfolio" class="nav-mobile-link">Portfólio</a></li>
+      <li><a href="#faq" class="nav-mobile-link">FAQ</a></li>
       <li><a href="#form-contato" class="nav-mobile-link">Orçamento</a></li>
+      <li><a href="#parceiros" class="nav-mobile-link">Parceirias</a></li>
     </ul>
     <div class="nav-mobile-cta">
       <div class="nav-mobile-socials">
@@ -371,7 +380,7 @@
           </svg>
         </a>
       </div>
-      <a href="https://wa.me/5511965723939" class="nav-cta">
+      <a href="#form-contato" class="nav-cta">
         <svg class="wa-icon">
           <use href="#icon-wa" />
         </svg>
@@ -386,7 +395,7 @@
   ═══════════════════════════════════════ -->
   <section class="hero" aria-label="Apresentação DC Produções">
     <img class="hero-img" src="img/hero.webp" alt="Evento corporativo produzido pela DC Produções em São Paulo"
-      loading="eager" fetchpriority="high" width="1920" height="1080">
+      loading="eager" fetchpriority="high" width="1428" height="1080">
     <div class="hero-overlay"></div>
     <div class="hero-accent"></div>
 
@@ -395,7 +404,7 @@
 
         <div class="hero-badge">
           <span class="hero-badge-dot"></span>
-          São Paulo · Eventos &amp; Audiovisual
+          São Paulo · Produção de Eventos
         </div>
 
         <h1 class="hero-title">
@@ -411,7 +420,7 @@
         </p>
 
         <div class="btn-row">
-          <a href="https://wa.me/5511965723939" class="btn-p">
+          <a href="#form-contato" class="btn-p">
             <svg class="wa-icon">
               <use href="#icon-wa" />
             </svg>
@@ -459,10 +468,18 @@
         <span>AUDIOVISUAL</span>
       </h2>
       <p class="about-text">
-        Fundada em 2019, a D.C Produções & Eventos nasceu para ser referência
-        em soluções completas. Trabalhamos com transparência e seriedade,
-        observando cada detalhe — do planejamento à execução.
-        Cada evento é único, e tratamos ele como tal.
+        Fundada em 2019 na Zona Sul de São Paulo, a DC Produções & Eventos
+        já realizou mais de 680 eventos corporativos, sociais e culturais,
+        com 99% de índice de satisfação entre os clientes. Atendemos desde
+        lançamentos de produto e convenções corporativas até casamentos e
+        feiras de negócios, sempre com equipe técnica própria para
+        audiovisual, cenografia, buffet e organização completa do evento.
+      </p>
+      <p class="about-text">
+        Trabalhamos com transparência e responsabilidade técnica em cada
+        etapa — do planejamento à execução — e já produzimos eventos para
+        marcas como Xiaomi, Monster Energy e OAB-SP. Embora nossa sede
+        esteja em São Paulo, atendemos eventos em todo o Brasil.
       </p>
       <div class="about-img-row">
         <img src="img/1.webp" alt="Equipe DC Produções coordenando evento em São Paulo" loading="lazy" width="450"
@@ -480,37 +497,42 @@
         <div class="svc-item">
           <span class="svc-num">01</span>
           <div>
-            <div class="svc-info-title">Produção & Audiovisual</div>
-            <div class="svc-info-desc">Equipamentos de última geração e equipe técnica para experiências imersivas.
+            <h3 class="svc-info-title">Produção & Audiovisual</h3>
+            <div class="svc-info-desc">Palco, som, iluminação e projeção com equipamentos de última geração e
+              equipe técnica própria, para eventos corporativos, shows e festivais em São Paulo.
             </div>
           </div>
         </div>
         <div class="svc-item">
           <span class="svc-num">02</span>
           <div>
-            <div class="svc-info-title">Stands, Cenografia & Estruturas</div>
-            <div class="svc-info-desc">Projetos personalizados com total segurança e responsabilidade técnica.</div>
+            <h3 class="svc-info-title">Stands, Cenografia & Estruturas</h3>
+            <div class="svc-info-desc">Projetos de stands e cenografia personalizados para feiras e exposições,
+              com estruturas montadas sob total segurança e responsabilidade técnica.</div>
           </div>
         </div>
         <div class="svc-item">
           <span class="svc-num">03</span>
           <div>
-            <div class="svc-info-title">Buffet & Catering</div>
-            <div class="svc-info-desc">Gastronomia completa levada até o seu evento com toda a infraestrutura.</div>
+            <h3 class="svc-info-title">Buffet & Catering</h3>
+            <div class="svc-info-desc">Gastronomia completa para eventos corporativos e sociais, com cardápio
+              personalizado e toda a infraestrutura de cozinha e serviço levada até o local.</div>
           </div>
         </div>
         <div class="svc-item">
           <span class="svc-num">04</span>
           <div>
-            <div class="svc-info-title">Organização de Eventos</div>
-            <div class="svc-info-desc">Planejamento e coordenação completa de eventos corporativos e shows.</div>
+            <h3 class="svc-info-title">Organização de Eventos</h3>
+            <div class="svc-info-desc">Planejamento e coordenação completa de eventos corporativos, sociais e
+              shows, do briefing inicial à execução no dia do evento.</div>
           </div>
         </div>
         <div class="svc-item">
           <span class="svc-num">05</span>
           <div>
-            <div class="svc-info-title">Mão de Obra Técnica</div>
-            <div class="svc-info-desc">Profissionais qualificados em todas as áreas do mercado de eventos.</div>
+            <h3 class="svc-info-title">Mão de Obra Técnica</h3>
+            <div class="svc-info-desc">Profissionais qualificados para montagem, operação e desmontagem de
+              estruturas, som, iluminação e audiovisual em todas as áreas do mercado de eventos.</div>
           </div>
         </div>
       </div>
@@ -746,6 +768,18 @@
         <p class="test-header-desc">
           Avaliações reais de clientes que confiaram na DC Produções para seus eventos.
         </p>
+        <a href="https://share.google/Yrnk9TL5aRhHulcfE" class="google-badge" target="_blank" rel="noopener noreferrer" aria-label="Ver avaliações da DC Produções no Google">
+          <svg class="google-badge-icon" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+          </svg>
+          <span class="google-badge-text">
+            <span class="google-badge-stars">★★★★★</span>
+            <span class="google-badge-label">Ver avaliações no Google</span>
+          </span>
+        </a>
       </div>
     </div>
 
@@ -774,15 +808,12 @@
                 <use href="#icon-star" />
               </svg>
             </div>
-            <p class="test-quote">"A DC Produções superou todas as nossas expectativas. A estrutura de palco, iluminação
-              e som do nosso evento corporativo ficou impecável. Equipe extremamente profissional do início ao fim."</p>
+            <p class="test-quote">"A DC Produções superou todas as nossas expectativas. A estrutura de palco, iluminação e som do nosso evento corporativo ficou impecável. Equipe extremamente profissional do início ao fim."</p>
             <div class="test-author">
-              <img class="test-avatar"
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=68&h=68&fit=crop&crop=face"
-                alt="Ricardo Almeida" loading="lazy">
+              <div class="test-avatar-fallback">R</div>
               <span class="test-author-name">Ricardo Almeida</span>
               <span class="test-author-sep"></span>
-              <span class="test-author-role">Diretor Comercial · OAB-SP</span>
+              <span class="test-author-role">Evento Corporativo</span>
             </div>
           </div>
 
@@ -804,16 +835,12 @@
                 <use href="#icon-star" />
               </svg>
             </div>
-            <p class="test-quote">"Contratamos para o lançamento do nosso produto e o resultado foi incrível. Stand
-              personalizado, audiovisual de altíssimo nível e buffet que agradou a todos os convidados. Recomendo sem
-              hesitar."</p>
+            <p class="test-quote">"Contratamos para o lançamento do nosso produto e o resultado foi incrível. Stand personalizado, audiovisual de altíssimo nível e buffet que agradou a todos os convidados. Recomendo sem hesitar."</p>
             <div class="test-author">
-              <img class="test-avatar"
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=68&h=68&fit=crop&crop=face"
-                alt="Fernanda Costa" loading="lazy">
+              <div class="test-avatar-fallback">F</div>
               <span class="test-author-name">Fernanda Costa</span>
               <span class="test-author-sep"></span>
-              <span class="test-author-role">Gerente de Marketing · Xiaomi</span>
+              <span class="test-author-role">Lançamento de Produto</span>
             </div>
           </div>
 
@@ -835,166 +862,12 @@
                 <use href="#icon-star" />
               </svg>
             </div>
-            <p class="test-quote">"Festival de 3 dias com mais de 5 mil pessoas. A DC Produções cuidou de tudo — palco,
-              som, iluminação, segurança técnica e mão de obra. Zero imprevistos. Voltaremos a contratar com certeza."
-            </p>
+            <p class="test-quote">"Contratei a DC para o meu casamento e foi a melhor decisão. O buffet estava delicioso, a decoração linda e a equipe de coordenação garantiu que tudo corresse perfeito."</p>
             <div class="test-author">
-              <div class="test-avatar-fallback">M</div>
-              <span class="test-author-name">Marcelo Vieira</span>
-              <span class="test-author-sep"></span>
-              <span class="test-author-role">Produtor · Monster Energy</span>
-            </div>
-          </div>
-
-          <div class="test-card">
-            <div class="test-stars">
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star empty">
-                <use href="#icon-star" />
-              </svg>
-            </div>
-            <p class="test-quote">"A cenografia do nosso evento de confraternização ficou além do esperado. Atendimento
-              impecável e entrega no prazo. A equipe tem um cuidado especial com cada detalhe da produção."</p>
-            <div class="test-author">
-              <img class="test-avatar"
-                src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=68&h=68&fit=crop&crop=face"
-                alt="Ana Paula Ramos" loading="lazy">
-              <span class="test-author-name">Ana Paula Ramos</span>
-              <span class="test-author-sep"></span>
-              <span class="test-author-role">Coord. de Eventos · Maccaferri</span>
-            </div>
-          </div>
-
-          <div class="test-card">
-            <div class="test-stars">
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-            </div>
-            <p class="test-quote">"Contratei a DC para o meu casamento e foi a melhor decisão. O buffet estava
-              delicioso, a decoração linda e a equipe de coordenação garantiu que tudo corresse perfeito. Noite
-              inesquecível!"</p>
-            <div class="test-author">
-              <img class="test-avatar"
-                src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=68&h=68&fit=crop&crop=face"
-                alt="Juliana Mendes" loading="lazy">
+              <div class="test-avatar-fallback">J</div>
               <span class="test-author-name">Juliana Mendes</span>
               <span class="test-author-sep"></span>
-              <span class="test-author-role">Cliente Particular</span>
-            </div>
-          </div>
-
-          <div class="test-card">
-            <div class="test-stars">
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-            </div>
-            <p class="test-quote">"Utilizamos a DC Produções para nossa convenção anual de vendas. Mais de 300
-              participantes e tudo funcionou perfeitamente — projeção, som, palco e credenciamento. Parceria renovada
-              para o próximo ano."</p>
-            <div class="test-author">
-              <div class="test-avatar-fallback">C</div>
-              <span class="test-author-name">Carlos Eduardo</span>
-              <span class="test-author-sep"></span>
-              <span class="test-author-role">VP de Vendas · Bacio di Latte</span>
-            </div>
-          </div>
-
-          <div class="test-card">
-            <div class="test-stars">
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-            </div>
-            <p class="test-quote">"Precisamos de mão de obra especializada para montar uma estrutura complexa em tempo
-              recorde. A DC entregou com qualidade e segurança. Profissionalismo que faz diferença em momentos
-              críticos."</p>
-            <div class="test-author">
-              <img class="test-avatar"
-                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=68&h=68&fit=crop&crop=face"
-                alt="Paulo Henrique" loading="lazy">
-              <span class="test-author-name">Paulo Henrique</span>
-              <span class="test-author-sep"></span>
-              <span class="test-author-role">Gerente de Operações</span>
-            </div>
-          </div>
-
-          <div class="test-card">
-            <div class="test-stars">
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-              <svg class="test-star">
-                <use href="#icon-star" />
-              </svg>
-            </div>
-            <p class="test-quote">"Do orçamento à execução, a comunicação foi clara e rápida. Entregaram exatamente o
-              que prometeram para o nosso show. É raro encontrar uma empresa de eventos tão organizada e comprometida."
-            </p>
-            <div class="test-author">
-              <img class="test-avatar"
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=68&h=68&fit=crop&crop=face"
-                alt="Larissa Torres" loading="lazy">
-              <span class="test-author-name">Larissa Torres</span>
-              <span class="test-author-sep"></span>
-              <span class="test-author-role">Produtora Musical · SP</span>
+              <span class="test-author-role">Casamento</span>
             </div>
           </div>
 
@@ -1088,6 +961,50 @@
 
 
   <!-- ═══════════════════════════════════════
+       FAQ
+  ═══════════════════════════════════════ -->
+  <section class="faq-section" id="faq" aria-label="Perguntas frequentes sobre a DC Produções">
+    <div class="faq-container">
+      <div class="faq-header" data-reveal="up">
+        <p class="sec-label">Dúvidas</p>
+        <h2 class="display">PERGUNTAS<br><span>FREQUENTES</span></h2>
+      </div>
+
+      <div class="faq-list" data-stagger>
+        <details class="faq-item">
+          <summary class="faq-question">
+            Quais serviços a DC Produções oferece?
+            <span class="faq-icon"></span>
+          </summary>
+          <p class="faq-answer">A DC Produções oferece produção e audiovisual, stands e cenografia, buffet e catering, organização completa de eventos corporativos e sociais, além de mão de obra técnica especializada em São Paulo.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">
+            A DC Produções atende fora de São Paulo?
+            <span class="faq-icon"></span>
+          </summary>
+          <p class="faq-answer">Sim. Embora nossa sede esteja na Zona Sul de São Paulo, atendemos eventos em todo o Brasil.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">
+            Como solicitar um orçamento?
+            <span class="faq-icon"></span>
+          </summary>
+          <p class="faq-answer">Você pode solicitar orçamento diretamente pelo WhatsApp (11) 96572-3939 ou preenchendo o formulário neste site. Retornamos em até 24 horas úteis.</p>
+        </details>
+        <details class="faq-item">
+          <summary class="faq-question">
+            Quantos eventos a DC Produções já realizou?
+            <span class="faq-icon"></span>
+          </summary>
+          <p class="faq-answer">Desde a fundação em 2019, a DC Produções já realizou mais de 680 eventos, com índice de satisfação de 99% entre os clientes.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════
        FORMULÁRIO DE ORÇAMENTO
   ═══════════════════════════════════════ -->
   <section class="contact-section" id="form-contato" aria-label="Formulário de orçamento de eventos">
@@ -1135,6 +1052,20 @@
               <input type="date" id="event-date" name="event_date">
             </div>
           </div>
+          <div class="form-row form-row--3">
+            <div class="form-group">
+              <label for="event-days">Quantidade de Dias</label>
+              <input type="number" id="event-days" name="event_days" placeholder="Ex: 1" min="1">
+            </div>
+            <div class="form-group">
+              <label for="event-time-start">Horário de Início</label>
+              <input type="time" id="event-time-start" name="event_time_start">
+            </div>
+            <div class="form-group">
+              <label for="event-time-end">Horário de Término</label>
+              <input type="time" id="event-time-end" name="event_time_end">
+            </div>
+          </div>
           <div class="form-group">
             <label for="event-location">Local do Evento</label>
             <div class="form-input-row">
@@ -1159,6 +1090,20 @@
               <input type="date" id="fair-date" name="fair_date">
             </div>
           </div>
+          <div class="form-row form-row--3">
+            <div class="form-group">
+              <label for="fair-days">Quantidade de Dias</label>
+              <input type="number" id="fair-days" name="fair_days" placeholder="Ex: 3" min="1">
+            </div>
+            <div class="form-group">
+              <label for="fair-time-start">Horário de Início</label>
+              <input type="time" id="fair-time-start" name="fair_time_start">
+            </div>
+            <div class="form-group">
+              <label for="fair-time-end">Horário de Término</label>
+              <input type="time" id="fair-time-end" name="fair_time_end">
+            </div>
+          </div>
           <div class="form-group">
             <label for="fair-location">Local do Evento</label>
             <div class="form-input-row">
@@ -1176,7 +1121,7 @@
               <option value="producao_evento">Produção de Eventos</option>
               <option value="audiovisual">Produção Audiovisual</option>
               <option value="stand_cenografia">Stand / Cenografia</option>
-              <option value="completo">Pacote Completo</option>
+              <option value="gerador">Gerador</option>
             </select>
           </div>
         </div>
@@ -1194,8 +1139,22 @@
                 <option value="" disabled selected>Selecione</option>
                 <option value="producao_evento">Produção de Evento</option>
                 <option value="audiovisual">Apenas Audiovisual</option>
-                <option value="completo">Pacote Completo</option>
+                <option value="gerador">Gerador</option>
               </select>
+            </div>
+          </div>
+          <div class="form-row form-row--3">
+            <div class="form-group">
+              <label for="av-days">Quantidade de Dias</label>
+              <input type="number" id="av-days" name="av_days" placeholder="Ex: 1" min="1">
+            </div>
+            <div class="form-group">
+              <label for="av-time-start">Horário de Início</label>
+              <input type="time" id="av-time-start" name="av_time_start">
+            </div>
+            <div class="form-group">
+              <label for="av-time-end">Horário de Término</label>
+              <input type="time" id="av-time-end" name="av_time_end">
             </div>
           </div>
           <div class="form-group">
@@ -1219,7 +1178,7 @@
           <svg class="wa-icon">
             <use href="#icon-wa" />
           </svg>
-          Enviar para WhatsApp →
+          Fale com o produtor →
         </button>
         <div id="formFeedback" class="form-feedback"></div>
       </form>
@@ -1230,23 +1189,26 @@
   <!-- ═══════════════════════════════════════
        CTA + FOOTER
   ═══════════════════════════════════════ -->
-  <footer class="bottom" id="contato" itemscope itemtype="https://schema.org/Organization">
+  <footer class="bottom" id="parceiros" itemscope itemtype="https://schema.org/Organization">
 
-    <!-- CTA Strip -->
-    <div class="cta-strip">
-      <div class="cta-strip-inner">
-        <div class="cta-strip-text" data-reveal="left">
-          <p class="cta-eyebrow">Pronto para o próximo evento?</p>
-          <h2 class="cta-title">TRANSFORME SUA<br>IDEIA EM UM EVENTO<br><span>INESQUECÍVEL</span></h2>
-        </div>
-        <div class="cta-strip-actions" data-reveal="right" data-delay="0.1">
-          <a href="https://wa.me/5511965723939" class="cta-strip-btn cta-strip-btn--primary">
-            <svg class="wa-icon">
-              <use href="#icon-wa" />
-            </svg>
-            Falar no WhatsApp
+    <!-- CTA Strip: Trabalhe Conosco + Parcerias -->
+    <div class="cta-strip" id="parceirias">
+      <div class="cta-strip-inner cta-strip-inner--split">
+        <div class="cta-strip-card" data-reveal="left">
+          <p class="cta-eyebrow">Faça parte do time</p>
+          <h2 class="cta-title cta-title--sm">TRABALHE<br>CONOSCO</h2>
+          <p class="cta-strip-desc">Buscamos profissionais apaixonados por eventos. Envie seu currículo e venha crescer com a gente.</p>
+          <a href="mailto:contato@dcproducoes.com.br?subject=Trabalhe%20Conosco&body=Ol%C3%A1!%20Tenho%20interesse%20em%20trabalhar%20na%20DC%20Produ%C3%A7%C3%B5es." class="cta-strip-btn cta-strip-btn--primary">
+            <span class="cta-strip-btn-icon">@</span>
+            Enviar Currículo
           </a>
-          <a href="#form-contato" class="cta-strip-btn cta-strip-btn--outline">Enviar Orçamento</a>
+        </div>
+        <div class="cta-strip-divider" aria-hidden="true"></div>
+        <div class="cta-strip-card" data-reveal="right" data-delay="0.1">
+          <p class="cta-eyebrow">Fornecedores e parceiros</p>
+          <h2 class="cta-title cta-title--sm">SEJA NOSSO<br><span>PARCEIRO</span></h2>
+          <p class="cta-strip-desc">Fotógrafos, DJs, buffets e fornecedores: vamos construir parcerias de sucesso em cada evento.</p>
+          <a href="mailto:contato@dcproducoes.com.br?subject=Quero%20ser%20Parceiro&body=Ol%C3%A1!%20Tenho%20interesse%20em%20ser%20parceiro%20da%20DC%20Produ%C3%A7%C3%B5es." class="cta-strip-btn cta-strip-btn--outline">Quero ser Parceiro</a>
         </div>
       </div>
     </div>
@@ -1303,7 +1265,9 @@
           <ul class="foot-links">
             <li><a href="#sobre">Sobre Nós</a></li>
             <li><a href="#portfolio">Portfólio</a></li>
+            <li><a href="#faq">FAQ</a></li>
             <li><a href="#form-contato">Solicitar Orçamento</a></li>
+            <li><a href="#parceiros">Parceirias</a></li>
             <li><a href="privacidade.html">Política de Privacidade</a></li>
             <li><a href="termos.html">Termos de Uso</a></li>
           </ul>
@@ -1331,7 +1295,7 @@
             </li>
             <li class="foot-contact-item">
               <span class="foot-contact-icon foot-contact-icon--pin">✦</span>
-              <span>Zona Sul · São Paulo, SP</span>
+              <span>São Paulo, SP</span>
             </li>
             <li class="foot-contact-item">
               <span class="foot-contact-icon foot-contact-icon--clock">◷</span>
@@ -1346,7 +1310,7 @@
     <!-- Footer Bottom Bar -->
     <div class="foot-bottom">
       <span class="foot-copy">© 2026 DC Produções & Eventos. Todos os direitos reservados.</span>
-      <span class="foot-copy">Feito por <a href="https://orbitastudio.com.br" target="_blank" rel="noopener noreferrer"
+      <span class="foot-copy">Feito por <a href="https://orbitastudioweb.com.br" target="_blank" rel="noopener noreferrer"
           class="foot-col-label">Orbita Studio Web</a></span>
       <span class="foot-copy">São Paulo — Brasil</span>
     </div>
@@ -1418,15 +1382,15 @@
 
 
   <!-- Swiper -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
 
   <!-- Scripts -->
-  <script src="js/cookies.js"></script>
-  <script src="js/nav.js"></script>
-  <script src="js/animations.js"></script>
-  <script src="js/carousel.js"></script>
-  <script src="js/form.js"></script>
-  <script src="js/transitions.js"></script>
+  <script src="js/cookies.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/animations.js" defer></script>
+  <script src="js/carousel.js" defer></script>
+  <script src="js/form.js" defer></script>
+  <script src="js/transitions.js" defer></script>
 
 </body>
 

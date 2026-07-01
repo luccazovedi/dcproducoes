@@ -84,20 +84,33 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     return `${day}/${m}/${y}`;
   }
 
+  function formatTimeRange(start, end) {
+    if (start && end) return `${start} às ${end}`;
+    if (start) return `A partir de ${start}`;
+    if (end) return `Até ${end}`;
+    return '';
+  }
+
   let extra = '';
 
   if (service === 'corporativo' || service === 'sociais' || service === 'outros') {
     const guests = val('event-guests'), date = formatDate(val('event-date')), location = val('event-location');
+    const days = val('event-days'), timeRange = formatTimeRange(val('event-time-start'), val('event-time-end'));
     if (guests)   extra += `*Quantidade de Pessoas:* ${guests}\n`;
     if (date)     extra += `*Data do Evento:* ${date}\n`;
+    if (days)     extra += `*Quantidade de Dias:* ${days}\n`;
+    if (timeRange) extra += `*Horário:* ${timeRange}\n`;
     if (location) extra += `*Local:* ${location}\n`;
     extra += `*Já tem local:* ${checked('has-venue')}\n`;
   }
 
   if (service === 'feiras_stands') {
     const area = val('fair-area'), date = formatDate(val('fair-date')), location = val('fair-location'), solic = val('fair-solicitation');
+    const days = val('fair-days'), timeRange = formatTimeRange(val('fair-time-start'), val('fair-time-end'));
     if (area)     extra += `*Área em m²:* ${area}\n`;
     if (date)     extra += `*Data do Evento:* ${date}\n`;
+    if (days)     extra += `*Quantidade de Dias:* ${days}\n`;
+    if (timeRange) extra += `*Horário:* ${timeRange}\n`;
     if (location) extra += `*Local:* ${location}\n`;
     extra += `*Já tem local:* ${checked('has-venue-fair')}\n`;
     if (solic)    extra += `*Tipo de Solicitação:* ${solicitacaoLabels[solic] || solic}\n`;
@@ -105,7 +118,10 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
 
   if (service === 'producao_audiovisual') {
     const date = formatDate(val('av-date')), solic = val('av-solicitation'), location = val('av-location');
+    const days = val('av-days'), timeRange = formatTimeRange(val('av-time-start'), val('av-time-end'));
     if (date)     extra += `*Data do Evento:* ${date}\n`;
+    if (days)     extra += `*Quantidade de Dias:* ${days}\n`;
+    if (timeRange) extra += `*Horário:* ${timeRange}\n`;
     if (solic)    extra += `*Tipo de Solicitação:* ${solicitacaoLabels[solic] || solic}\n`;
     if (location) extra += `*Local:* ${location}\n`;
     extra += `*Já tem local:* ${checked('has-venue-av')}\n`;

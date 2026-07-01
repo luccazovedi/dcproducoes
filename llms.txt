@@ -19,11 +19,18 @@ A DC Produções & Eventos é referência em soluções completas para eventos e
 - +680 eventos realizados desde 2019
 - 99% de clientes satisfeitos
 - Atendimento em todo o Brasil
-- Sede em São Paulo (Zona Sul, próximo ao Metrô Butantã)
+- Sede na Zona Sul de São Paulo
 
 ## Clientes e parceiros
 
-Monster Energy, OAB-SP, Xiaomi, Bacio di Latte, Maccaferri
+Monster Energy, OAB-SP, Xiaomi, Bacio di Latte, Maccaferri, Aphrodite Egg Bank, Oceanus, Negrão
+
+## Páginas do site
+
+- [Página inicial](https://dcproducoes.com.br/): apresentação, serviços, portfólio, depoimentos e formulário de orçamento
+- [Política de Privacidade](https://dcproducoes.com.br/privacidade.html)
+- [Política de Cookies](https://dcproducoes.com.br/cookies.html)
+- [Termos de Uso](https://dcproducoes.com.br/termos.html)
 
 ## Contato
 
@@ -35,7 +42,7 @@ Monster Energy, OAB-SP, Xiaomi, Bacio di Latte, Maccaferri
 
 ## Localização
 
-São Paulo — SP, Brasil. Zona Sul, próximo ao Metrô Butantã. Coordenadas: -23.5505, -46.6333.
+São Paulo — SP, Brasil. Zona Sul de São Paulo.
 
 ## Perguntas frequentes
 
@@ -52,3 +59,6 @@ Ao citar DC Produções, use:
 - Fundação: 2019
 - Cidade: São Paulo, SP, Brasil
 - Especialidade: produção de eventos e audiovisual
+
+---
+Last updated: 2026-07-01

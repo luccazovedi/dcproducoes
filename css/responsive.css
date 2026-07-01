@@ -61,14 +61,14 @@
   }
 
   .svc-item:active {
-    background: rgba(251,191,36,.08);
+    background: rgba(59,130,246,.08);
     border-left-color: var(--blue);
     transition: background .15s ease, border-color .15s ease;
   }
 
   .client-cell:active {
     background: #ffffff;
-    box-shadow: 0 6px 20px rgba(251,191,36,.14);
+    box-shadow: 0 6px 20px rgba(59,130,246,.14);
     transform: translateY(-2px);
     transition: transform .15s cubic-bezier(0.22, 1, 0.36, 1), box-shadow .15s ease;
   }
@@ -207,6 +207,11 @@
   .cta-title { font-size: clamp(28px, 6vw, 42px); }
   .cta-strip-actions { flex-direction: row; flex-wrap: wrap; gap: 10px; }
   .cta-strip-btn { flex: 1; min-width: 160px; justify-content: center; }
+
+  .cta-strip-inner--split { gap: 32px; }
+  .cta-strip-divider { display: none; }
+  .cta-strip-card { align-items: flex-start; }
+  .cta-strip-card .cta-strip-btn { flex: none; width: 100%; }
 
   .footer-main-inner { grid-template-columns: 1fr 1fr; gap: 32px; padding: 40px 24px 32px; }
   .foot-col--brand { grid-column: 1 / -1; }
