@@ -53,13 +53,13 @@
 .logo:hover { transform: scale(1.05); }
 
 .logo img {
-  height: 6em;
+  height: 4em;
   width: auto;
   filter: none;
   transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.site-header.scrolled .logo img { height: 4em; }
+.site-header.scrolled .logo img { height: 3em; }
 
 .logo-text {
   font-family: 'DM Sans', system-ui, sans-serif;

@@ -5,13 +5,13 @@ const COOKIE_DAYS = 365;
 
 function setCookie(name, value, days) {
   const expires = new Date(Date.now() + days * 864e5).toUTCString();
-  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax`;
+  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/; SameSite=Lax${location.protocol === 'https:' ? '; Secure' : ''}`;
 }
 
 function getCookie(name) {
   return document.cookie.split('; ').reduce(function(acc, pair) {
-    const [k, v] = pair.split('=');
-    return k === name ? decodeURIComponent(v) : acc;
+    const i = pair.indexOf('=');
+    return pair.slice(0, i) === name ? decodeURIComponent(pair.slice(i + 1)) : acc;
   }, null);
 }
 
@@ -25,8 +25,6 @@ function saveConsent(prefs) {
 }
 
 function applyConsent(prefs) {
-  // Analytics — adicionar scripts de rastreamento aqui quando necessário
-  // if (prefs.analytics) { /* carregar GA, etc. */ }
 }
 
 function hideBanner() {
@@ -73,6 +71,26 @@ function saveCustom() {
   applyConsent(prefs);
   hideBanner();
 }
+
+function resetCookieConsent() {
+  document.cookie = `${COOKIE_KEY}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; SameSite=Lax`;
+  location.href = 'index.html';
+}
+
+const COOKIE_ACTIONS = {
+  'accept-all': acceptAll,
+  'essential': acceptEssential,
+  'customize': showDetails,
+  'save': saveCustom,
+  'reset': resetCookieConsent
+};
+
+document.addEventListener('click', function(e) {
+  const el = e.target.closest('[data-cookie-action]');
+  if (!el) return;
+  const fn = COOKIE_ACTIONS[el.dataset.cookieAction];
+  if (fn) fn();
+});
 
 // Inicializa
 document.addEventListener('DOMContentLoaded', function() {

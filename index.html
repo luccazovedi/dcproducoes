@@ -1336,9 +1336,9 @@
             href="cookies.html">Política de Cookies</a>.</p>
       </div>
       <div class="cookie-actions">
-        <button class="cookie-btn cookie-btn--accept" onclick="acceptAll()">Aceitar todos</button>
-        <button class="cookie-btn cookie-btn--essential" onclick="acceptEssential()">Só essenciais</button>
-        <button class="cookie-btn cookie-btn--customize" onclick="showDetails()">Personalizar</button>
+        <button class="cookie-btn cookie-btn--accept" data-cookie-action="accept-all">Aceitar todos</button>
+        <button class="cookie-btn cookie-btn--essential" data-cookie-action="essential">Só essenciais</button>
+        <button class="cookie-btn cookie-btn--customize" data-cookie-action="customize">Personalizar</button>
       </div>
     </div>
     <div id="cookieDetails">
@@ -1375,7 +1375,7 @@
         </div>
       </div>
       <div class="cookie-detail-save">
-        <button class="cookie-btn cookie-btn--accept" onclick="saveCustom()">Salvar preferências</button>
+        <button class="cookie-btn cookie-btn--accept" data-cookie-action="save">Salvar preferências</button>
       </div>
     </div>
   </div>
